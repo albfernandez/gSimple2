@@ -1,0 +1,97 @@
+;
+;Contiene los mensajes de la interfaz gráfica en el lenguaje:
+;ESPAÑOL
+Programa_Lenguaje = Español
+Programa_Nombre = gSimple2
+Programa_descripcion = Simulador de la ruta de datos del SIMPLE2
+DialogoAcerca_Title = Acerca de...
+DialogoAcerca_Version = {0}
+DialogoAcerca_Autores = Autores:
+DialogoConfiguracion_Title = Preferencias
+Ventana_Menu_Archivo = _Archivo
+Ventana_Menu_Opciones = _Opciones
+Ventana_Menu_Proyecto = _Proyecto
+Ventana_Menu_Ayuda = A_yuda
+Ventana_Menu_AcercaDe = _Acerca de...
+Ventana_Ejecutar = Ejecutar
+Ventana_ToolTip_Nuevo = Crear un nuevo documento
+Ventana_ToolTip_Abrir = Abrir un archivo
+Ventana_ToolTip_Guardar = Guardar el archivo
+Ventana_Pausar = Pausar
+
+Ventana_ToolTip_Ejecutar = Comenzar la simulación
+Ventana_ToolTip_Detener = Detener la simulación
+Ventana_ToolTip_Salir = Salir del programa
+Ventana_Statusbar_Texto = Línea {0} de {1}, col: {2}, pos: {3}, ({4} %).
+Ventana_Titulo = {0} : {1}
+Ventana_No_Archivo = Sin Nombre
+
+Ventana_DialogoG = Guardar como...
+Ventana_DialogoA = Abrir un archivo...
+Ventana_ErrorCargarFichero = No pude leer del archivo de origen
+
+Ventana_ErrorNoFichero = Debe seleccionar un fichero para abrir
+Ventana_ErrorEscritura = No puede escribir en el fichero
+Ventana_ErrorCrearFichero = No pude crear el fichero
+Ventana_SobreescribirArchivo = ¿Desea sobreescribir el archivo?
+Ventana_SeleccionarFichero = Debe seleccionar un fichero
+Ventana_SalirModificado = ¿Desea salir y perder los cambios?
+Ventana_SalirEjecucion = Hay una simulación en curso. ¿Desea terminar la aplicación?
+Ventana_AbrirModificado = ¿Desea crear un nuevo documento y perder sus modificaciones?
+Ventana_NuevoModificado = ¿Desea crear un nuevo documento y perder sus modificaciones?
+
+Ventana_ToolTip_Pausar = Pausa/Reanuda la simulación
+Ventana_Notebook_Codigo = Código
+Ventana_Notebook_Memoria = Memoria
+Ventana_Notebook_Registros = Registros
+Ventana_Notebook_rdd = Ruta de Datos
+
+Ventana_Error_Ensamblar = Se han producido errores al ensamblar el código
+Ventana_Simulacion_Curso = Simulación en curso
+Ventana_Simulacion_Fin = Simulación finalizada
+Ens_Advertencias = Advertencias
+Ens_Errores = Errores
+
+D_Conf_Ensamblador = Ensamblador
+D_Conf_MostrarAdv = Mostrar advertencias
+D_Conf_MemDef = Usar memoria por defecto
+D_Conf_MemUsu = Definida por el usuario
+D_Conf_Explorar = Explorar...
+D_Conf_Memoria = Memoria de control
+D_Conf_Simulador = Simulador
+D_Conf_Tiempo = Tiempo de cada subciclo (ms)
+D_Conf_Selector = Seleccionar un archivo...
+D_Conf_ErrorMemNoExiste = El archivo indicado para la memoria de control no existe
+D_Conf_ErrorMem = El fichero de memoria de control no es correcto
+
+MemControl_Err01 = Formato incorrecto, faltan datos
+MemControl_Err02 = El valor de la direccion de memoria debe estar en el rango 0x000 - 0x3FF
+MemControl_Err03 = El valor de los datos debe estar en el rango 0x0 - 0xFFFF FFFF FFFF
+MemControl_Err04 = La posición {0} de la memoria ya ha sido asignada
+MemControl_Err05 = Linea {0}. Formato numérico incorrecto
+MemControl_Err06 = Linea {0}. Valor fuera de rango
+MemControl_Err07 = Linea {0}. {1}
+MemControl_Err08 = Error en la linea {0}
+
+Ens_err_parm0 = La instrucción {0} no lleva parámetros
+Ens_err_parame1 = La instrucción {0} lleva un parámetro
+Ens_err_parame_fr = Parámetro fuera de rango
+Ens_err_parm1_numero = El primer parámetro debe ser un número entero
+Ens_err_etqnodec = Linea {0}. Etiqueta usada pero no declarada: {1}
+Ens_adv_etqnousada = Linea {0}. Etiqueta "{1}" declarada pero no usada nunca
+Ens_Err_etqlet = Una etiqueta debe comenzar por una letra
+Ens_Err_etqcar = La etiqueta "{0}" contiene un carácter no válido
+Ens_err_etqreser = La etiqueta "{0}" corresponde a una palabra reservada
+Ens_err_etqrepetida = La etiqueta "{0}" ha sido declarada con anterioridad en la línea {1}
+Ens_err01 = Linea {0}. Una instrucción no puede comenzar con ":"
+Ens_err02 = Linea {0}. {1}
+Ens_err03 = Linea {0}. No se reconoce la instrucción {1}
+
+PReg_Contenido = Contenido de los registros
+PMem_Contenido = Contenido de la memoria
+
+VAyuda_Error = Se produjo un error al cargar la ayuda: {0}
+VAyuda_NoBrowser = No se encontró un navegador válido.
+VAyuda_NoDoc = Falta el archivo "{0}".
+
+

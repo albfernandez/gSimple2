@@ -1,0 +1,99 @@
+;
+;
+;ENGLISH
+Programa_Lenguaje = English
+Programa_Nombre = gSimple2
+Programa_descripcion = a Simple2 simulator
+DialogoAcerca_Title = About...
+DialogoAcerca_Version = {0}
+DialogoAcerca_Autores = Authors
+DialogoConfiguracion_Title = Preferences
+Ventana_Menu_Archivo = _File
+Ventana_Menu_Opciones = _Options
+Ventana_Menu_Proyecto = _Project
+Ventana_Menu_Ayuda = _Help
+Ventana_Menu_AcercaDe = _About...
+Ventana_Ejecutar = Execute
+Ventana_ToolTip_Nuevo = Create a new document
+Ventana_ToolTip_Abrir = Open a file
+Ventana_ToolTip_Guardar = Save the current file
+
+Ventana_ToolTip_Ejecutar = Start the simulation
+Ventana_ToolTip_Detener = Stop the simulation
+Ventana_ToolTip_Salir = Exit the program
+Ventana_Statusbar_Texto = Line {0} of {1}, col: {2}, pos: {3}, ({4} %).
+Ventana_Titulo = {0} : {1}
+Ventana_No_Archivo = Untitled
+Ventana_DialogoG = Save As...
+Ventana_DialogoA = Open File...
+Ventana_ErrorCargarFichero = Could not read source file
+
+Ventana_ErrorNoFichero = You must select a file to open
+Ventana_ErrorEscritura = Can't write in destination file
+Ventana_ErrorCrearFichero = Can't create destination file
+Ventana_SobreescribirArchivo = Do you like to overwrite the existing file?
+Ventana_SeleccionarFichero = You must select a file
+Ventana_SalirModificado = Do you like to exit and lose all your changes?
+Ventana_SalirEjecucion = A simulation is running. Do you still want to exit?
+Ventana_AbrirModificado = Do you like to open a file and lose all your changes?
+Ventana_NuevoModificado = Do you like to create a new document and lose all your changes?
+
+Ventana_Pausar = Pause
+Ventana_ToolTip_Pausar = Pause/Resume the simulation
+Ventana_Notebook_Codigo = Code
+Ventana_Notebook_Memoria = Memory
+Ventana_Notebook_Registros = Registers
+Ventana_Notebook_rdd = Data Route
+
+Ventana_Error_Ensamblar = There were errors while assembling the code
+Ventana_Simulacion_Curso = Simulating
+Ventana_Simulacion_Fin = Simulation finished
+Ens_Advertencias = Warnings
+Ens_Errores = Errors
+
+D_Conf_Ensamblador = Assembler
+D_Conf_MostrarAdv = Show warnings
+D_Conf_MemDef = Use default memory
+D_Conf_MemUsu = User defined memory
+D_Conf_Explorar = Browse...
+D_Conf_Memoria = Control Memory
+D_Conf_Simulador = Simulator
+D_Conf_Tiempo = Subcicle time (ms)
+D_Conf_Selector = Select File...
+D_Conf_ErrorMemNoExiste = Selected file does not exist
+D_Conf_ErrorMem = File format is wrong!
+
+MemControl_Err01 = Incorrect format
+MemControl_Err02 = Dir value must be in range 0x000 - 0x3FF
+MemControl_Err03 = Data value must be in range 0x0 - 0xFFFF FFFF FFFF
+MemControl_Err04 = Dir {0} have been assigned previously.
+MemControl_Err05 = Line {0}. Invalid Numeric Format
+MemControl_Err06 = Line {0}. Value out of range
+MemControl_Err07 = Line {0}. {1}
+MemControl_Err08 = Error at line {0}
+
+Ens_err_parame1 = Instruction {0} needs a only parameter
+Ens_err_parm0 = Instruction {0}. Too much parameters
+Ens_err_parame_fr = Parameter out of range
+Ens_err_parm1_numero = First parameter must be an integer value
+Ens_err_etqnodec = Line {0}. Label used but never defined:{1}
+Ens_adv_etqnousada = Line {0}. Label "{1}" declared but never used
+Ens_Err_etqlet = A label must begin with an alphabetic character
+Ens_Err_etqcar = Label "{0}" contains an invalid character
+Ens_err_etqreser = "{0}" is a reserved word
+Ens_err_etqrepetida = Label "{0}" has been declared at line {1}
+Ens_err01 = Line {0}. ":"
+Ens_err02 = Line {0}. {1}
+Ens_err03 = Linea {0}. Instruction {1} not recognized
+
+PReg_Contenido = Contenido de los registros
+PMem_Contenido = Contenido de la memoria
+
+VAyuda_Error = There was a problem while loading help:\n{0}
+VAyuda_NoBrowser = Browser not found.
+VAyuda_NoDoc = File "{0}" not found.
+;
+;
+;
+;
+
