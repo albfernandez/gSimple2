@@ -2,7 +2,7 @@
 <project name="gSimple2" default="build" basedir=".">
 	<description>Build file for gSimple2.</description>
 	<property name="debug" value="true" overwrite="false" />
-	<property name="codepage" value="utf8" overwrite="false" />
+	<property name="codepage" value="windows1252" overwrite="false" />
 	<property name="build.output.dir" value="build"/>
 
 
@@ -20,9 +20,16 @@
 			<resources>
 				<include name="pixmaps/*.*" />
 			</resources>
+			<resources>
+				<include name="src/languages/*.txt"/>
+			</resources>
 			<pkg-references>
 				<package name="gtk-sharp-2.0"/>
+				<package name="glib-sharp-2.0" />
 			</pkg-references>
+			<nowarn>
+				<warning number="0162,0169,0168,0219,0414,0649,0114,0105,0618,0612"></warning>
+			 </nowarn>
 		</csc>
 	</target>
 </project>

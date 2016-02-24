@@ -3,6 +3,7 @@ namespace simple2.interfaz.gtk
 	using Gdk;
 	using System.Resources;
 	using System;
+	using System.Reflection;
 
 	/// <remarks>Esta clase se encarga de cargar las imágenes guardadas
 	/// como recursos dentro del asembly.  Las imágenes están guardadas
@@ -30,19 +31,7 @@ namespace simple2.interfaz.gtk
 		
 		public static Gdk.Pixbuf GetPixmap (String nombre)
 		{
-			if (resPixmaps == null)
-			{
-				resPixmaps = new ResourceManager 
-						("Pixmaps", typeof (IconManager).Assembly);
-			}
-       		
-			byte[]img = (byte[])resPixmaps.GetObject (nombre);
-			if (img == null)
-				img = (byte[])resPixmaps.GetObject ("default.png");
-			PixbufLoader pixLoad = new PixbufLoader ();
-			pixLoad.Write (img, (uint) img.Length);
-			pixLoad.Close ();
-			return (pixLoad.Pixbuf);
+			return new Gdk.Pixbuf (Assembly.GetExecutingAssembly(), nombre);
 		}
 	}
 

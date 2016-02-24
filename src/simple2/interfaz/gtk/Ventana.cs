@@ -3,7 +3,6 @@ namespace simple2.interfaz.gtk
 
 	using Gtk;
 	using Gdk;
-	using GtkSharp;
 	using System;
 
 	using System.IO;
@@ -490,7 +489,7 @@ namespace simple2.interfaz.gtk
 			Gtk.ScrolledWindow sw = new Gtk.ScrolledWindow ();
 			sw.Add (view);
 			textoCodigo.MarkSet +=
-				new GtkSharp.MarkSetHandler (ActualizadaPosicionCursor);
+				new Gtk.MarkSetHandler (ActualizadaPosicionCursor);
 			return sw;
 		}
 		
@@ -558,12 +557,11 @@ namespace simple2.interfaz.gtk
 		/// <param name="args">Los argumentos.</param>
 		
 		private void ActualizadaPosicionCursor 
-			(object o, GtkSharp.MarkSetArgs args)
+			(object o, Gtk.MarkSetArgs args)
 		{
 
 			Gtk.TextMark mark = textoCodigo.InsertMark;
-			Gtk.TextIter iter;
-			textoCodigo.GetIterAtMark (out iter, mark);
+			Gtk.TextIter iter = textoCodigo.GetIterAtMark (mark);
 
 			int lineasTotales = textoCodigo.LineCount;
 			int caractTotales = textoCodigo.CharCount;

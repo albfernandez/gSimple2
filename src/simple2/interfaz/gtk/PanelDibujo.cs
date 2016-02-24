@@ -2,10 +2,10 @@ namespace simple2.interfaz.gtk
 {
 	using Gtk;
 	using Gdk;
-	using GtkSharp;
 	using Pango;
 	using System;
 	using System.Timers;
+	using GLib;
 	
 	using simple2.representacionRuta;
 
@@ -111,16 +111,11 @@ namespace simple2.interfaz.gtk
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 		
-		public void OnExposeEvent (object o,  GtkSharp.ExposeEventArgs args)
+		public void OnExposeEvent (object o,  Gtk.ExposeEventArgs args)
 		{
 			lock (this)
 			{
-				Gdk.EventExpose ev = args.Event;
-				window = ev.window;
-				Gdk.Rectangle area = ev.area;
-
 				Refresh();			
-			
 				SignalArgs sa = (SignalArgs) args;
 				sa.RetVal = false;
 			}
@@ -135,8 +130,9 @@ namespace simple2.interfaz.gtk
 			lock(this)
 			{
 				simple2.hilos.Hilo.Sleep(10);
-				while (Application.EventsPending())
+				while (Application.EventsPending()) {
 					Application.RunIteration();
+				}
 				return true;
 			}
 		}
@@ -150,13 +146,13 @@ namespace simple2.interfaz.gtk
 		{
 			lock (this)
 			{
+				// TODO ver de donde sacamos window ahora
 				Gdk.EventConfigure ev = args.Event;
-				window = ev.window;
 
 
-				pixmap = new Pixmap (window, ev.width, ev.height, -1);
-				_ancho = ev.width;
-				_alto = ev.height;
+				pixmap = new Pixmap (window, ev.Width, ev.Height, -1);
+				_ancho = ev.Width;
+				_alto = ev.Height;
 				this.Clean();
 				if (rdd != null)
 				{
@@ -277,7 +273,7 @@ namespace simple2.interfaz.gtk
 				if (pixmap != null)
 				{
 					pixmap.DrawRectangle (
-						GetGC (COLOR_FONDO), 1, 0, 0, Ancho, Alto);
+						GetGC (COLOR_FONDO), true, 0, 0, Ancho, Alto);
 				}				
 			}
 		}
@@ -299,7 +295,7 @@ namespace simple2.interfaz.gtk
 				{
 					pixmap.DrawRectangle (
 						GetGC(COLOR_FONDO), 
-						1, 
+						true, 
 						CoordX(x), 
 						CoordY(y), 
 						CoordX(ancho), 
@@ -420,7 +416,7 @@ namespace simple2.interfaz.gtk
 				{
 					pixmap.DrawRectangle(
 						GetGC(c), 
-						0, 
+						false, 
 						CoordX(x1), 
 						CoordY(y1), 
 						CoordX(ancho), 

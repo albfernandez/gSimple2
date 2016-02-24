@@ -2,7 +2,6 @@ namespace simple2.interfaz.gtk
 {
 	using Gtk;
 	using Gdk;
-	using GtkSharp;
 	using System;
 	using System.Reflection;
 
@@ -70,7 +69,7 @@ namespace simple2.interfaz.gtk
 
 			eventBox.Add (vbox);
 			eventBox.ButtonPressEvent +=
-				new GtkSharp.ButtonPressEventHandler (CerrarClick);
+				new Gtk.ButtonPressEventHandler (CerrarClick);
 			VBox.Add (eventBox);
 
 		}
@@ -80,7 +79,7 @@ namespace simple2.interfaz.gtk
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 
-		private void CerrarClick(object o, GtkSharp.ButtonPressEventArgs args)
+		private void CerrarClick(object o, Gtk.ButtonPressEventArgs args)
 		{
 			Hide ();
 		}

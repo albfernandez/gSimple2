@@ -67,11 +67,7 @@ namespace simple2.interfaz.gtk
 		/// <summary>Botón para mostrar el selector de ficheros.</summary>
 		
 		private Gtk.Button btnFichero = null;
-		
-		/// <summary>Lista para los RadioButtons.</summary>
-		
-		private static GLib.SList group = null;
-		
+
 		/// <summary>Obtiene la única instancia de la clase (patrón
 		/// Singleton).</summary>
 		
@@ -124,8 +120,7 @@ namespace simple2.interfaz.gtk
 			
 			rbMemoriaDef = new RadioButton (null, 
 				Ventana.GetText("D_Conf_MemDef"));
-			group = rbMemoriaDef.Group;
-			rbMemoriaUsu = new RadioButton (group, 
+			rbMemoriaUsu = new RadioButton (rbMemoriaDef, 
 				Ventana.GetText("D_Conf_MemUsu"));
 			
 			rbMemoriaDef.Toggled += new EventHandler (rbToggled1);
@@ -187,8 +182,8 @@ namespace simple2.interfaz.gtk
 		private Gtk.Widget CrearPanelInferior ()
 		{
 			Gtk.HBox hbox = new Gtk.HBox (true, 10);
-			btnCancelar = Gtk.Button.NewFromStock(Gtk.Stock.Cancel);
-			btnAceptar  = Gtk.Button.NewFromStock(Gtk.Stock.Ok);
+			btnCancelar = new Gtk.Button(Gtk.Stock.Cancel);
+			btnAceptar  = new Gtk.Button(Gtk.Stock.Ok);
 			hbox.PackStart (btnAceptar);
 			hbox.PackStart (btnCancelar);
 			

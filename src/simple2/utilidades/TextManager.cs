@@ -39,7 +39,7 @@ namespace simple2.utilidades
 				try
 				{
 					resManDefecto =
-						new	ResourceManager ("Mensajes." + lengDefecto,
+						new	ResourceManager ("Mensajes." + lengDefecto + ".txt",
 								 typeof(TextManager).Assembly);
 				}
 				catch (Exception ex)
@@ -59,7 +59,7 @@ namespace simple2.utilidades
 					try
 					{
 						if (lang.Length > 2)
-							recurso = "Mensajes." +	lang.Substring (0, 2);
+							recurso = "Mensajes." +	lang.Substring (0, 2) + ".txt";
 						resMan = new ResourceManager (recurso,
 							 typeof(TextManager).Assembly);
 						resMan.GetString ("Programa_Lenguaje");
