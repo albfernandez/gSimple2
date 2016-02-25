@@ -2,8 +2,8 @@
 <project name="gSimple2" default="build" basedir=".">
 	<description>Build file for gSimple2.</description>
 	<property name="debug" value="true" overwrite="false" />
-	<property name="codepage" value="windows1252" overwrite="false" />
-	<property name="build.output.dir" value="build"/>
+	<property name="codepage" value="utf8" overwrite="false" />
+	<property name="build.output.dir" value="target"/>
 
 
 
@@ -13,14 +13,13 @@
     </target>
 
     <target name="build">
+		<mkdir dir="${build.output.dir}" /> 
 		<csc target="exe" output="${build.output.dir}/gSimple2.exe" codepage="${codepage}" debug="${debug}">
 			<sources>
 				<include name="src/simple2/**.cs" />
 			</sources>
 			<resources>
 				<include name="pixmaps/*.*" />
-			</resources>
-			<resources>
 				<include name="src/languages/*.txt"/>
 			</resources>
 			<pkg-references>
