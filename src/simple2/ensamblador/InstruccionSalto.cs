@@ -31,14 +31,14 @@ namespace simple2.ensamblador
 
 		}
 		
-		/// <summary>Verifica una linea de c骴igo.</summary>
+		/// <summary>Verifica una linea de c贸digo.</summary>
 		/// <param name="linea">La linea a verificar.</param>
 		/// <param name="etiquetasUsadas">La lista de etiquetas usadas.
 		/// </param>
 		/// <param name="l_fichero">La linea en la que se encuentra la
-		/// instrucci髇</param>
+		/// instrucci贸n</param>
 		/// <exception cref="gSimple2.Ensamblador.ErrorCodigoException">
-		/// Si la instrucci髇 no es correcta.</exception>
+		/// Si la instrucci贸n no es correcta.</exception>
 		
 		public void Verificar (String linea, 
 					Hashtable etiquetasUsadas,
@@ -81,11 +81,11 @@ namespace simple2.ensamblador
 			}
 		}
 		
-		/// <summary>Compila una linea de c骴igo</summary>
+		/// <summary>Compila una linea de c贸digo</summary>
 		/// <param name="linea">La linea a codificar</param>
 		/// <param name="etiquetasDeclaradas>La lista de etiquetas declaradas
-		/// con su posici髇.</param>
-		/// <returns>El c骴igo ensamblado en binario</returns>
+		/// con su posici贸n.</param>
+		/// <returns>El c贸digo ensamblado en binario</returns>
 		
 		public short Compilar (String linea,
 				       Hashtable etiquetasDeclaradas)

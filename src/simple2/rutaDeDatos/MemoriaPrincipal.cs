@@ -9,12 +9,12 @@ namespace simple2.rutaDeDatos
 	public class MemoriaPrincipal
 	{
 
-		/// <summary>Número de palabras de 16 bits que almacena la memoria.
+		/// <summary>NÃºmero de palabras de 16 bits que almacena la memoria.
 		/// </summary>
 		
 		public const int TAMANO = 2048;
 		
-		/// <summary>Número de bits utilizados para las direcciones.
+		/// <summary>NÃºmero de bits utilizados para las direcciones.
 		/// </summary>
 		
 		public const int BITSDIRECCION = 11;
@@ -30,7 +30,7 @@ namespace simple2.rutaDeDatos
 		
 		private short[] memoria = null;
 		
-		/// <summary>Máscara de bits a aplicar para direccionar únicamente
+		/// <summary>MÃ¡scara de bits a aplicar para direccionar Ãºnicamente
 		/// <c>TAMANO</c> direcciones.</summary>
 		
 		private short mask = 0;
@@ -45,9 +45,9 @@ namespace simple2.rutaDeDatos
 		}
 		
 		/// <summary>Crea una instancia de la clase con los datos iniciales
-		/// que se le indican como parámetros.</summary>
+		/// que se le indican como parÃ¡metros.</summary>
 		/// <param name="codigoInicial">Los datos iniciales de la memoria, 
-		/// se ponen en la memoria a partir de la posición 0.
+		/// se ponen en la memoria a partir de la posiciÃ³n 0.
 		/// </param>
 		
 		public MemoriaPrincipal (short[] codigoInicial)
@@ -64,8 +64,8 @@ namespace simple2.rutaDeDatos
 		}
 		
 		/// <summary>Escribe un dato en la memoria.</summary>
-		/// <param name="direccion">La dirección en la que se 
-		/// escribirá el dato.</param>
+		/// <param name="direccion">La direcciÃ³n en la que se 
+		/// escribirÃ¡ el dato.</param>
 		/// <param name="dato">El dato a escribir.</param>
 		
 		public void EscribirDato (short direccion, short dato)
@@ -77,7 +77,7 @@ namespace simple2.rutaDeDatos
 		}
 		
 		/// <summary>Lee un dato de la memoria.</summary>
-		/// <param name="direccion">La dirección en la que leeremos el dato.
+		/// <param name="direccion">La direcciÃ³n en la que leeremos el dato.
 		/// </param>
 		/// <returns>El dato solicitado</returns>
 		
@@ -87,7 +87,7 @@ namespace simple2.rutaDeDatos
 			return memoria[dir];
 		}
 
-		/// <summary>Añade un listener para los cambios en la memoria.
+		/// <summary>AÃ±ade un listener para los cambios en la memoria.
 		/// </summary>
 		/// <param name="l">El listener.</param>
 		
@@ -98,8 +98,8 @@ namespace simple2.rutaDeDatos
 		}
 		
 		/// <summary>Notifica a los listeners que se ha producido una 
-		/// una modificación en la memoria.</summary>
-		/// <param name="dir">La dirección de la memoria modificada.</param>
+		/// una modificaciÃ³n en la memoria.</summary>
+		/// <param name="dir">La direcciÃ³n de la memoria modificada.</param>
 		/// <param name="newValue">El nuevo valor almacenado en
 		/// <c>dir</c></param>
 		

@@ -4,7 +4,7 @@ namespace simple2.utilidades
 	using System.Resources;
 	
 	/// <remarks>Clase que se encarga de gestionar los recursos 
-	/// de internacionalización de texto de la aplicación.</remarks>
+	/// de internacionalizaciÃ³n de texto de la aplicaciÃ³n.</remarks>
 	
 	public class TextManager
 	{
@@ -20,13 +20,13 @@ namespace simple2.utilidades
 		
 		public const String lengDefecto = "es";
 		
-		/// <summary>Única instancia de la clase. Patrón singleton.
+		/// <summary>Ãšnica instancia de la clase. PatrÃ³n singleton.
 		/// </summary>
 		
 		private static TextManager instancia = null;
 		
 		/// <summary>Constructor privado. No se permite crear instancias
-		/// de esta clase exteriormente. Patrón singleton.</summary>
+		/// de esta clase exteriormente. PatrÃ³n singleton.</summary>
 		
 		private TextManager ()
 		{
@@ -76,9 +76,9 @@ namespace simple2.utilidades
 			}
 		}
 		
-		/// <summary>Obtiene la única instancia de la clase (patrón singleton)
+		/// <summary>Obtiene la Ãºnica instancia de la clase (patrÃ³n singleton)
 		/// </summary>
-		/// <returns>La única instancia de la clase.</returns>
+		/// <returns>La Ãºnica instancia de la clase.</returns>
 		
 		public static TextManager GetInstance()
 		{
@@ -89,9 +89,9 @@ namespace simple2.utilidades
 		
 		/// <summary>Obtiene el texto para la clave indicada en el idioma
 		/// activo. Primero intenta con el idioma del sistema. Si
-		/// no está disponible, prueba ocn el idioma por defecto. Si también
-		/// falla, devuelve la clave de búsqueda.</summary>
-		/// <param name="clave">Cadena de texto con la clave de búsqueda
+		/// no estÃ¡ disponible, prueba ocn el idioma por defecto. Si tambiÃ©n
+		/// falla, devuelve la clave de bÃºsqueda.</summary>
+		/// <param name="clave">Cadena de texto con la clave de bÃºsqueda
 		/// </param>
 		/// <returns>El texto correspondiente en el idioma del sistema.
 		/// </returns>
@@ -103,9 +103,9 @@ namespace simple2.utilidades
 		
 		/// <summary>Obtiene el texto para la clave indicada en el idioma
 		/// activo. Primero intenta con el idioma del sistema. Si
-		/// no está disponible, prueba ocn el idioma por defecto. Si también
-		/// falla, devuelve la clave de búsqueda.</summary>
-		/// <param name="clave">Cadena de texto con la clave de búsqueda
+		/// no estÃ¡ disponible, prueba ocn el idioma por defecto. Si tambiÃ©n
+		/// falla, devuelve la clave de bÃºsqueda.</summary>
+		/// <param name="clave">Cadena de texto con la clave de bÃºsqueda
 		/// </param>
 		/// <returns>El texto correspondiente en el idioma del sistema.
 		/// </returns>

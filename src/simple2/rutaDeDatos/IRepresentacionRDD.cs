@@ -3,7 +3,7 @@ namespace simple2.rutaDeDatos
 		
 	/// <remarks>Interface que deben implementar las clases que representan
 	/// la ruta de datos en pantalla.  La clase SecuenciadorMicroprograma
-	/// ir· llamando a los mÈtodos correspondientes para que se actualizen los
+	/// ir√° llamando a los m√©todos correspondientes para que se actualizen los
 	/// datos.</remarks>
 	
 	public interface IRepresentacionRDD
@@ -15,16 +15,16 @@ namespace simple2.rutaDeDatos
 
 		/// <summary>Activa los elementos activos durante el subciclo 1.
 		/// </summary>
-		/// <param name="mic">La microinstrucciÛn que se
+		/// <param name="mic">La microinstrucci√≥n que se
 		/// acaba de cargar.</param>
-		/// <param name="rdc>La direcciÛn de la memoria de control en la que
-		/// se encuentra la microinstrucciÛn.</param>
+		/// <param name="rdc>La direcci√≥n de la memoria de control en la que
+		/// se encuentra la microinstrucci√≥n.</param>
 		
 		void DibujarCiclo1 (MicroInstruccion mic, short rdc);
 		
 		/// <summary>Activa los elementos activos durante el subciclo 2.
 		/// </summary>
-		/// <param name="mic">La microinstrucciÛn actualmente en ejecuciÛn.
+		/// <param name="mic">La microinstrucci√≥n actualmente en ejecuci√≥n.
 		/// Nos indica los registros de origen.</param>
 		/// <param name="regA">El contenido de BufferA.</param>
 		/// <param name="regB">El contenido de BufferB.</param>
@@ -33,7 +33,7 @@ namespace simple2.rutaDeDatos
 		
 		/// <summary>Activa los elementos activos durante el subciclo 3.
 		/// </summary>
-		/// <param name="mic">La microinstrucciÛn en ejecuciÛn.</param>
+		/// <param name="mic">La microinstrucci√≥n en ejecuci√≥n.</param>
 		/// <param name="vSH">El valor del registro SH.</param>
 		/// <param name="vMAR">El valor del registro MAR.</param>
 		/// <param name="vMBR">El valor del registro MBR.</param>
@@ -47,7 +47,7 @@ namespace simple2.rutaDeDatos
 		
 		/// <summary>Activa los elementos activos durante el subciclo 4.
 		/// </summary>
-		/// <param name="mic">La microinstrucciÛn en ejecuciÛn.</param>
+		/// <param name="mic">La microinstrucci√≥n en ejecuci√≥n.</param>
 		/// <param name="vMBR">El valor del registro MBR.</param>S
 		
 		void DibujarCiclo4(MicroInstruccion mic, short vMBR);

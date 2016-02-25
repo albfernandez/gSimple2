@@ -6,17 +6,17 @@ namespace simple2.interfaz.gtk
 	using System;
 
 	/// <remarks>Esta clase representa los elementos configurables
-	/// por el usuario en la aplicación.</remarks>
+	/// por el usuario en la aplicaciÃ³n.</remarks>
 
 	[Serializable]
 	public class Opciones 
 	{
-		/// <summary>Única instancia de la clase (patrón Singleton).
+		/// <summary>Ãšnica instancia de la clase (patrÃ³n Singleton).
 		/// </summary>
 		
 		private static Opciones instancia = null;
 		
-		/// <summary>Ruta del fichero donde se almacenarán las opciones.
+		/// <summary>Ruta del fichero donde se almacenarÃ¡n las opciones.
 		/// </summary>
 		
 		private static String fichero = ".gSimple2.cfg";
@@ -45,9 +45,9 @@ namespace simple2.interfaz.gtk
 		{
 		}
 		
-		/// <summary>Obtiene la única instancia de la clase (patrón
+		/// <summary>Obtiene la Ãºnica instancia de la clase (patrÃ³n
 		/// Singleton)</summary>
-		/// <returns>La única instancia de la clase.</returns>
+		/// <returns>La Ãºnica instancia de la clase.</returns>
 		
 		public static Opciones GetInstance ()
 		{
@@ -58,7 +58,7 @@ namespace simple2.interfaz.gtk
 			return instancia;
 		}
 		
-		/// <summary>Carga las opciones de un fichero. Si se produce algún
+		/// <summary>Carga las opciones de un fichero. Si se produce algÃºn
 		/// error devuelve las opciones por defecto.</summary>
 		/// <returns>Las opciones almacenadas.</returns>
 		

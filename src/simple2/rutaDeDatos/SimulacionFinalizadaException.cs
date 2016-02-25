@@ -2,13 +2,13 @@ namespace simple2.rutaDeDatos
 {
 	using System;
 	
-	/// <remarks>Excepción que se lanza cuando termina la simulación.
+	/// <remarks>ExcepciÃ³n que se lanza cuando termina la simulaciÃ³n.
 	/// </remarks>
 	
 	public class SimulacionFinalizadaException : Exception
 	{
 		/// <summary>Crea una instancia de la clase.</summary>
-		/// <param name="mensaje">El mensaje de la excepción</param>
+		/// <param name="mensaje">El mensaje de la excepciÃ³n</param>
 		
 		public SimulacionFinalizadaException(String mensaje)
 			:base (mensaje)

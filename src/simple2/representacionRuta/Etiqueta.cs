@@ -7,7 +7,7 @@ namespace simple2.representacionRuta
 	public class Etiqueta : ElementoDibujable
 	{
 	
-		/// <summary>Indica si el texto est· centrado a las coordenadas.
+		/// <summary>Indica si el texto est√° centrado a las coordenadas.
 		/// </summary>
 		
 		private bool centrado;
@@ -16,12 +16,12 @@ namespace simple2.representacionRuta
 		
 		private EnuColor color;
 		
-		/// <summary>PosiciÛn x de la esquina superior izquierda de la caja.
+		/// <summary>Posici√≥n x de la esquina superior izquierda de la caja.
 		/// </summary>
 		
 		private int x;
 		
-		/// <summary>PosiciÛn y de la esquina superior izquierda de la caja.
+		/// <summary>Posici√≥n y de la esquina superior izquierda de la caja.
 		/// </summary>
 		
 		private int y;
@@ -33,7 +33,7 @@ namespace simple2.representacionRuta
 		
 		/// <summary>Crea una instancia de la clase. Toma el color
 		/// por defecto y el texto centrado en las coordenadas.</summary>
-		/// <param name="dib">La superfice sobre la que se dibujar·
+		/// <param name="dib">La superfice sobre la que se dibujar√°
 		/// la etiqueta.</param>
 		/// <param name="x">La coordenada x de la etiqueta.</param>
 		/// <param name="y">La coordenada y de la etiqueta.</param>
@@ -44,14 +44,14 @@ namespace simple2.representacionRuta
 		{}
 		
 		/// <summary>Crea una instancia de la clase.</summary>
-		/// <param name="dib">La superfice sobre la que se dibujar·
+		/// <param name="dib">La superfice sobre la que se dibujar√°
 		/// la etiqueta.</param>
 		/// <param name="x">La coordenada x de la etiqueta.</param>
 		/// <param name="y">La coordenada y de la etiqueta.</param>
 		/// <param name="texto">El texto de la etiqueta.</param>
-		/// <param name="color">El color en el que se escribir· el texto.
+		/// <param name="color">El color en el que se escribir√° el texto.
 		/// </param>
-		/// <param name="centrado>Indica si el texto se mostrar· centrado.
+		/// <param name="centrado>Indica si el texto se mostrar√° centrado.
 		/// </param>
 		
 		public Etiqueta 
@@ -65,7 +65,7 @@ namespace simple2.representacionRuta
 			this.texto = texto;
 		}
 	
-		/// <summary>MÈtodo para dibujar el objeto en su estado
+		/// <summary>M√©todo para dibujar el objeto en su estado
 		/// inactivo.</summary>
 		
 		protected override void PintarInactivo()
@@ -73,7 +73,7 @@ namespace simple2.representacionRuta
 			dibujo.DibujarTexto (this.color, x, y, this.texto, centrado);
 		}
 		
-		/// <summary>MÈtodo para dibujar el objeto en su estado
+		/// <summary>M√©todo para dibujar el objeto en su estado
 		/// activo.</summary>
 		
 		protected override void PintarActivo ()

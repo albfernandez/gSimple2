@@ -65,7 +65,7 @@ namespace simple2.interfaz.gtk
 			}
 		}
 		
-		/// <summary>Se llama para inicializar el listener, pas·ndole un
+		/// <summary>Se llama para inicializar el listener, pas√°ndole un
 		/// array con el contenido de todos los registros.</summary>
 		/// <param name="newValues">Los valores almacenados en los registros.
 		/// </param>

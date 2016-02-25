@@ -2,20 +2,20 @@ namespace simple2.rutaDeDatos
 {
 	using System;
 	
-	/// <remarks>Esta clase representa a una microinstrucci髇 del 
+	/// <remarks>Esta clase representa a una microinstrucci贸n del 
 	/// ordenador Simple2.</remarks>
 	
 	public class MicroInstruccion
 	{
 	
-		/// <summary>La microinstrucci髇 en binario, como un entero
+		/// <summary>La microinstrucci贸n en binario, como un entero
 		/// largo sin signo.</summary>
 		
 		private ulong instruccion;
 
 		/// <summary>Crea una instancia de la clase a partir de un valor.
 		/// </summary>
-		/// <param name="valor">El valor binario de la microinstrucci髇.
+		/// <param name="valor">El valor binario de la microinstrucci贸n.
 		/// </param>
 		
 		public MicroInstruccion (ulong valor)
@@ -23,9 +23,9 @@ namespace simple2.rutaDeDatos
 			instruccion = valor;
 		}
 		
-		/// <summary>Obtiene la microinstrucci髇 como un entero largo sin
+		/// <summary>Obtiene la microinstrucci贸n como un entero largo sin
 		/// signo.</summary>
-		/// <returns>la microinstrucci髇 como un entero largo sin
+		/// <returns>la microinstrucci贸n como un entero largo sin
 		/// signo.</returns>
 		
 		public ulong ToLong ()
@@ -33,8 +33,8 @@ namespace simple2.rutaDeDatos
 			return instruccion;
 		}
 		
-		/// <summary>Obtiene la operaci髇 de la ALU.</summary>
-		/// <returns>La operaci髇 de la ALU.</returns>
+		/// <summary>Obtiene la operaci贸n de la ALU.</summary>
+		/// <returns>La operaci贸n de la ALU.</returns>
 		
 		public int GetALU ()
 		{
@@ -145,10 +145,10 @@ namespace simple2.rutaDeDatos
 			return GetBits (47, 1);
 		}
 		
-		/// <summary>Obtiene el valor de un campo en una posici髇 y de
-		/// un tama駉 dados.</summary>
-		/// <param name="b">Posici髇 del primer bit del campo.</param>
-		/// <param name="count">N鷐ero de bits que componen el campo.</param>
+		/// <summary>Obtiene el valor de un campo en una posici贸n y de
+		/// un tama帽o dados.</summary>
+		/// <param name="b">Posici贸n del primer bit del campo.</param>
+		/// <param name="count">N煤mero de bits que componen el campo.</param>
 		/// <returns></returns>
 		
 		private int GetBits (int b, int count)
@@ -159,10 +159,10 @@ namespace simple2.rutaDeDatos
 			return (int) resultado;
 		}
 		
-		/// <summary>Obtiene una representaci髇 en hexadecimal de
-		/// la microinstrucci髇 como una cadena de texto.</summary>
-		/// <returns>La representanci髇 en hexadecimal de la 
-		/// microinstrucci髇.</returns>
+		/// <summary>Obtiene una representaci贸n en hexadecimal de
+		/// la microinstrucci贸n como una cadena de texto.</summary>
+		/// <returns>La representanci贸n en hexadecimal de la 
+		/// microinstrucci贸n.</returns>
 		
 		public String ToHexString ()
 		{

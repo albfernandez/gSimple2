@@ -14,46 +14,46 @@ namespace simple2.interfaz.gtk
 	using simple2.utilidades;
 	using simple2.representacionRuta;
 
-	/// <remarks>Esta clase es la ventana principal de la aplicaciÛn.
+	/// <remarks>Esta clase es la ventana principal de la aplicaci√≥n.
 	/// </remarks>
 
 	public class Ventana : Gtk.Window
 	{
-		///<summary>BotÛn para detener la simulaciÛn.</summary>
+		///<summary>Bot√≥n para detener la simulaci√≥n.</summary>
 		
 		private static Gtk.Button btnDetener = null;
 		
-		/// <summary>BotÛn para compilar y comenzar la simulaciÛn.</summary>
+		/// <summary>Bot√≥n para compilar y comenzar la simulaci√≥n.</summary>
 		
 		private static Gtk.Button btnEjecutar = null;
 		
-		/// <summary>BotÛn para pausar la simulaciÛn.</summary>
+		/// <summary>Bot√≥n para pausar la simulaci√≥n.</summary>
 		
 		private static Gtk.ToggleButton btnPausar = null;
 		
-		/// <summary>Menuitem para compilar y comenzar la simulaciÛn.
+		/// <summary>Menuitem para compilar y comenzar la simulaci√≥n.
 		/// </summary>
 		
 		private static Gtk.ImageMenuItem itemEjecutar = null;
 		
-		/// <summary>MenuItem para detener la simulaciÛn.</summary>
+		/// <summary>MenuItem para detener la simulaci√≥n.</summary>
 		
 		private static Gtk.ImageMenuItem itemDetener = null;
 		
-		/// <summary>MenuItem para pausar la simulaciÛn.</summary>
+		/// <summary>MenuItem para pausar la simulaci√≥n.</summary>
 		
 		private static Gtk.ImageMenuItem itemPausar = null;
 		
-		/// <summary>Hilo encargado de llamar a la simulaciÛn.</summary>
+		/// <summary>Hilo encargado de llamar a la simulaci√≥n.</summary>
 		
 		private static HiloEjecucion hiloEjecucion = null;
 
-		/// <summary>Di·logo para la selecciÛn de ficheros, en modo abrir.
+		/// <summary>Di√°logo para la selecci√≥n de ficheros, en modo abrir.
 		/// </summary>
 		
 		private static Gtk.FileSelection selectorAbrir = null;
 		
-		/// <summary>Di·logo para la selecciÛn de ficheros, en modo
+		/// <summary>Di√°logo para la selecci√≥n de ficheros, en modo
 		/// guardar.</summary>
 		
 		private static Gtk.FileSelection selectorGuardar = null;
@@ -62,18 +62,18 @@ namespace simple2.interfaz.gtk
 		
 		private Statusbar sb = null;
 
-		/// <summary>¡rea de texto donde se introduce el cÛdigo en 
+		/// <summary>√Årea de texto donde se introduce el c√≥digo en 
 		/// ensamblador.</summary>
 
 		private Gtk.TextBuffer textoCodigo;
 		
-		/// <summary>¡rea de texto donde se muestran los errores producidos
-		/// durante el ensamblado del cÛdigo.</summary>
+		/// <summary>√Årea de texto donde se muestran los errores producidos
+		/// durante el ensamblado del c√≥digo.</summary>
 		
 		private Gtk.TextBuffer textoErrores;
 		
-		/// <summary>¡rea de texto donde se muestra el resultado del 
-		/// ensamblado del cÛdigo.</summary>
+		/// <summary>√Årea de texto donde se muestra el resultado del 
+		/// ensamblado del c√≥digo.</summary>
 		
 		private Gtk.TextBuffer textoResultado;
 		
@@ -81,12 +81,12 @@ namespace simple2.interfaz.gtk
 		
 		private Gtk.Notebook notebook = null;
 
-		/// <summary>Almacena el nombre del fichero que se est· editando.
+		/// <summary>Almacena el nombre del fichero que se est√° editando.
 		/// </summary>
 		
 		private String _nombreFichero;
 		
-		/// <summary>El nombre del fichero que se est· editando.</summary>
+		/// <summary>El nombre del fichero que se est√° editando.</summary>
 		
 		private String nombreFichero
 		{
@@ -122,7 +122,7 @@ namespace simple2.interfaz.gtk
 		
 		private PanelDibujo dArea = null;
 		
-		/// <summary>Instancia ˙nica de esta clase (patrÛn sigleton)
+		/// <summary>Instancia √∫nica de esta clase (patr√≥n sigleton)
 		/// </summary>
 		
 		private static Ventana instancia = null;
@@ -145,9 +145,9 @@ namespace simple2.interfaz.gtk
 				new GLib.TimeoutHandler(dArea.ProcesarEventosPendientes));
 		}
 				
-		/// <summary>Obtiene la instancia ˙nica de esta clase (patrÛn
+		/// <summary>Obtiene la instancia √∫nica de esta clase (patr√≥n
 		/// sigleton).</summary>
-		/// <returns>La ˙nica instancia de esta clase.</returns>
+		/// <returns>La √∫nica instancia de esta clase.</returns>
 		
 		public static Ventana GetInstance()
 		{
@@ -174,7 +174,7 @@ namespace simple2.interfaz.gtk
 			Gtk.VBox vbox = new VBox (false, 2);
 			Gtk.VBox menubox = new VBox (false, 0);
 
-			// Barra de men˙.
+			// Barra de men√∫.
 			MenuBar mb = CrearMenuBar ();
 			menubox.PackStart (mb, false, false, 0);
 
@@ -195,8 +195,8 @@ namespace simple2.interfaz.gtk
 
 		}
 
-		/// <summary>Crea la barra de men˙ de la aplicaciÛn.</summary>
-		/// <returns>La barra de men˙ de la aplicaciÛn.</returns>
+		/// <summary>Crea la barra de men√∫ de la aplicaci√≥n.</summary>
+		/// <returns>La barra de men√∫ de la aplicaci√≥n.</returns>
 
 		private MenuBar CrearMenuBar ()
 		{
@@ -206,7 +206,7 @@ namespace simple2.interfaz.gtk
 			ImageMenuItem item = null;
 
 			//---
-			// Elementos del men˙ Archivo.
+			// Elementos del men√∫ Archivo.
 			
 			Menu menuArchivo = new Menu ();
 
@@ -239,7 +239,7 @@ namespace simple2.interfaz.gtk
 
 
 			//--
-			// Elementos del men˙ de opciones.
+			// Elementos del men√∫ de opciones.
 			
 			Menu menuOpciones = new Menu();
 			MenuItem menuOpcionesItem = 
@@ -252,7 +252,7 @@ namespace simple2.interfaz.gtk
 			menuOpciones.Append(item);
 
 			//--
-			// Elementos del men˙ proyecto.
+			// Elementos del men√∫ proyecto.
 			
 			Menu menuProyecto = new Menu ();
 
@@ -299,7 +299,7 @@ namespace simple2.interfaz.gtk
 			menuProyecto.Append (itemDetener);
 							
 			//---	
-			// Elementos del men˙ Ayuda			
+			// Elementos del men√∫ Ayuda			
 			
 			Menu menuAyuda = new Menu ();
 
@@ -426,8 +426,8 @@ namespace simple2.interfaz.gtk
 			return barra;
 		}
 
-		/// <summary>Crea el notebook donde est·n los campos
-		/// de ediciÛn de texto del ensamblador.</summary>
+		/// <summary>Crea el notebook donde est√°n los campos
+		/// de edici√≥n de texto del ensamblador.</summary>
 		/// <returns>El notebook.</returns>
 	
 		private Notebook CrearNotebook ()
@@ -477,9 +477,9 @@ namespace simple2.interfaz.gtk
 			return not;
 		}
 		
-		/// <summary>Crea el editor para el cÛdigo en ensamblador.</summary>
+		/// <summary>Crea el editor para el c√≥digo en ensamblador.</summary>
 		/// <returns>Un widget que contiene el campo de texto para
-		/// editar cÛdigo ensamblador.</returns>
+		/// editar c√≥digo ensamblador.</returns>
 		
 		private Gtk.Widget CrearEditorEnsamblador ()
 		{
@@ -494,7 +494,7 @@ namespace simple2.interfaz.gtk
 		}
 		
 		/// <summary>Crea el editor para mostrar los errores producidos
-		/// al ensamblar el cÛdigo en ensamblador.</summary>
+		/// al ensamblar el c√≥digo en ensamblador.</summary>
 		/// <returns>Un widget con el campo de texto para mostrar
 		/// los errores y advertencias del ensamblador.</returns>
 		
@@ -539,7 +539,7 @@ namespace simple2.interfaz.gtk
 		}
 
 		/// <summary>Oculta una ventana.</summary>
-		/// <param name="o">El objeto que llama a la funciÛn.</param>
+		/// <param name="o">El objeto que llama a la funci√≥n.</param>
 		/// <param name="args">Los argumentos.</param>
 
 
@@ -550,8 +550,8 @@ namespace simple2.interfaz.gtk
 			args.RetVal = true;
 		}
 
-		/// <summary>FunciÛn para actualizar el texto de la barra de estado
-		/// cuando cambia la posiciÛn del cursor en el cuadro de ediciÛn de
+		/// <summary>Funci√≥n para actualizar el texto de la barra de estado
+		/// cuando cambia la posici√≥n del cursor en el cuadro de edici√≥n de
 		/// texto ensamblador.</summary>
 		/// <param name="o">El objeto que provoca la llamada.</param>
 		/// <param name="args">Los argumentos.</param>
@@ -582,14 +582,14 @@ namespace simple2.interfaz.gtk
 			PonerMensajeStatusbar (	mensaje );
 		}
 		
-		/// <summary>FunciÛn que no hace nada.</summary>
+		/// <summary>Funci√≥n que no hace nada.</summary>
 		
 		private void VentanaNada ()
 		{
 			return;
 		}
 		
-		/// <summary>FunciÛn que se llama al pulsar sobre salir.</summary>
+		/// <summary>Funci√≥n que se llama al pulsar sobre salir.</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 		
@@ -598,7 +598,7 @@ namespace simple2.interfaz.gtk
 			VentanaSalir ();
 		}
 		
-		/// <summary>FunciÛn que se llama al pulsar sobre salir.</summary>
+		/// <summary>Funci√≥n que se llama al pulsar sobre salir.</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 		
@@ -608,9 +608,9 @@ namespace simple2.interfaz.gtk
 			args.RetVal = true;
 		}
 		
-		/// <summary>FunciÛn que se llama al pulsar sobre salir.
-		/// Si el cÛdigo introducido en el campo de ediciÛn no ha sido
-		/// guardado pregunta antes de cerrar la aplicaciÛn.</summary>
+		/// <summary>Funci√≥n que se llama al pulsar sobre salir.
+		/// Si el c√≥digo introducido en el campo de edici√≥n no ha sido
+		/// guardado pregunta antes de cerrar la aplicaci√≥n.</summary>
 		
 		private void VentanaSalir ()
 		{
@@ -803,7 +803,7 @@ namespace simple2.interfaz.gtk
 			selectorAbrir.ShowAll ();
 		}
 
-		/// <summary>FunciÛn que se ejecuta cuando se pulsa sobre el botÛn
+		/// <summary>Funci√≥n que se ejecuta cuando se pulsa sobre el bot√≥n
 		/// ok del selector de ficheros a guardar. Pregunta el nombre del
 		/// archivo en el que queremos guardar el texto y lo guarda.
 		/// </summary>
@@ -890,7 +890,7 @@ namespace simple2.interfaz.gtk
 		
 		}
 		
-		/// <summary>FunciÛn que se llama al pulsar sobre el botÛn ok
+		/// <summary>Funci√≥n que se llama al pulsar sobre el bot√≥n ok
 		/// del selector de ficheros para abrir. Carga el fichero
 		/// seleccionado.</summary>
 		/// <param name="o"></param>
@@ -946,7 +946,7 @@ namespace simple2.interfaz.gtk
 
 		}
 
-		/// <summary>Oculta los di·logos de selecciÛn de ficheros.</summary>
+		/// <summary>Oculta los di√°logos de selecci√≥n de ficheros.</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 		
@@ -967,8 +967,8 @@ namespace simple2.interfaz.gtk
 			simple2.interfaz.gtk.VentanaAyuda.GetInstance().ShowAll();
 		}
 
-		/// <summary>Muestra el di·logo de configuraciÛn de la
-		/// aplicaciÛn.</summary>
+		/// <summary>Muestra el di√°logo de configuraci√≥n de la
+		/// aplicaci√≥n.</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 		
@@ -977,7 +977,7 @@ namespace simple2.interfaz.gtk
 			DialogoConfiguracion.GetInstance().ShowAll();
 		}
 
-		/// <summary>Muestra el di·logo Acerca de...</summary>
+		/// <summary>Muestra el di√°logo Acerca de...</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 		
@@ -986,7 +986,7 @@ namespace simple2.interfaz.gtk
 			DialogoAcerca.GetInstance().ShowAll();
 		}
 
-		/// <summary>Pausa la simulaciÛn.</summary>
+		/// <summary>Pausa la simulaci√≥n.</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 		
@@ -1006,8 +1006,8 @@ namespace simple2.interfaz.gtk
 			}
 		}
 			
-		/// <summary>Ensambla el cÛdigo y, si no hay errores, comienza
-		/// la simulaciÛn.</summary>
+		/// <summary>Ensambla el c√≥digo y, si no hay errores, comienza
+		/// la simulaci√≥n.</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 		
@@ -1016,8 +1016,8 @@ namespace simple2.interfaz.gtk
 			VentanaEjecutar ();
 		}
 		
-		/// <summary>Ensambla el cÛdigo y, si no hay errores, comienza
-		/// la simulaciÛn.</summary>
+		/// <summary>Ensambla el c√≥digo y, si no hay errores, comienza
+		/// la simulaci√≥n.</summary>
 		
 		private void VentanaEjecutar ()
 		{
@@ -1070,7 +1070,7 @@ namespace simple2.interfaz.gtk
 				return;
 			}
 			
-			//Si la compilaciÛn ha salido bien, entondes ejecutamos.
+			//Si la compilaci√≥n ha salido bien, entondes ejecutamos.
 			
 			
 			MemoriaControl mc  = new MemoriaControl ();
@@ -1111,7 +1111,7 @@ namespace simple2.interfaz.gtk
 
 		}
 		
-		/// <summary>Detiene la simulaciÛn.</summary>
+		/// <summary>Detiene la simulaci√≥n.</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 		
@@ -1120,7 +1120,7 @@ namespace simple2.interfaz.gtk
 			VentanaDetener();
 		}
 		
-		/// <summary>Detiene la simulaciÛn.</summary>
+		/// <summary>Detiene la simulaci√≥n.</summary>
 		
 		private void VentanaDetener ()
 		{
@@ -1132,8 +1132,8 @@ namespace simple2.interfaz.gtk
 		}
 		
 		/// <remarks>Esta clase se encarga de activar y desactivar los 
-		/// botones de ejecuciÛn, pausa y parada seg˙n el estado de la
-		/// simulaciÛn.</remarks>
+		/// botones de ejecuci√≥n, pausa y parada seg√∫n el estado de la
+		/// simulaci√≥n.</remarks>
 		
 		class HiloEspera : Hilo
 		{
@@ -1144,9 +1144,9 @@ namespace simple2.interfaz.gtk
 			{
 			}
 			
-			/// <summary>FunciÛn que se ejecuta cuando se lanza el hilo.
+			/// <summary>Funci√≥n que se ejecuta cuando se lanza el hilo.
 			/// En primera instancia deshabilita ejecutar, y habilita detener
-			/// y pausar.  Espera a que termine la simulaciÛn y, cuando esto
+			/// y pausar.  Espera a que termine la simulaci√≥n y, cuando esto
 			/// ocurre, habilita ejecutar y deshabilita detener y pausar.
 			/// </summary>
 			

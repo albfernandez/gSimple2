@@ -12,67 +12,67 @@ namespace simple2.rutaDeDatos
 	
 	public class BancoRegistros
 	{
-		/// <summary>Õndice del registro PC (0).</summary>
+		/// <summary>√çndice del registro PC (0).</summary>
 		
 		public const int PC = 0x00;
 		
-		/// <summary>Õndice del registro AC (1).</summary>
+		/// <summary>√çndice del registro AC (1).</summary>
 		
 		public const int AC = 0x01;
 		
-		/// <summary>Õndice del registro SP (2).</summary>
+		/// <summary>√çndice del registro SP (2).</summary>
 		
 		public const int SP = 0x02;
 		
-		/// <summary>Õndice del registro IR (3).</summary>
+		/// <summary>√çndice del registro IR (3).</summary>
 		
 		public const int IR = 0x03;
 		
-		/// <summary>Õndice del registro OMASK (4).</summary>
+		/// <summary>√çndice del registro OMASK (4).</summary>
 		
 		public const int OMASK = 0x04;
 		
-		/// <summary>Õndice del registro RCON1 (5).</summary>
+		/// <summary>√çndice del registro RCON1 (5).</summary>
 		
 		public const int RCON1 = 0x05;
 		
-		/// <summary>Õndice del registro RCON2 (6).</summary>
+		/// <summary>√çndice del registro RCON2 (6).</summary>
 		
 		public const int RCON2 = 0x06;
 		
-		/// <summary>Õndice del registro RCON3 (7).</summary>
+		/// <summary>√çndice del registro RCON3 (7).</summary>
 		
 		public const int RCON3 = 0x07;
 		
-		/// <summary>Õndice del registro AMASK (8).</summary>
+		/// <summary>√çndice del registro AMASK (8).</summary>
 		
 		public const int AMASK = 0x08;
 		
-		/// <summary>Õndice del registro SMASK (9).</summary>
+		/// <summary>√çndice del registro SMASK (9).</summary>
 		
 		public const int SMASK = 0x09;
 		
-		/// <summary>Õndice del registro A (10).</summary>
+		/// <summary>√çndice del registro A (10).</summary>
 		
 		public const int A = 0x0A;
 		
-		/// <summary>Õndice del registro B (11).</summary>
+		/// <summary>√çndice del registro B (11).</summary>
 		
 		public const int B = 0x0B;
 		
-		/// <summary>Õndice del registro C (12).</summary>
+		/// <summary>√çndice del registro C (12).</summary>
 		
 		public const int C = 0x0C;
 		
-		/// <summary>Õndice del registro D (13).</summary>
+		/// <summary>√çndice del registro D (13).</summary>
 		
 		public const int D = 0x0D;
 		
-		/// <summary>Õndice del registro E (14).</summary>
+		/// <summary>√çndice del registro E (14).</summary>
 		
 		public const int E = 0x0E;
 		
-		/// <summary>Õndice del registro F (15).</summary>
+		/// <summary>√çndice del registro F (15).</summary>
 		
 		public const int F = 0x0F;
 		
@@ -97,7 +97,7 @@ namespace simple2.rutaDeDatos
 			"F"};
 			
 		
-		/// <summary>Lista de los listeners que ser·n notificados de los
+		/// <summary>Lista de los listeners que ser√°n notificados de los
 		/// cambios de valores de los registros.</summary>
 		
 		private ArrayList listeners = new ArrayList();
@@ -107,11 +107,11 @@ namespace simple2.rutaDeDatos
 
 		private short[] registros;
 		
-		/// <summary>Obtiene el nombre de un registro dado su Ìndice.
+		/// <summary>Obtiene el nombre de un registro dado su √≠ndice.
 		/// </summary>
-		/// <param name="reg">El Ìndice del registro.</param>
-		/// <returns>El nombre del registro, la cadena vacia si el Ìndice
-		/// indicado no es v·lido.</returns>
+		/// <param name="reg">El √≠ndice del registro.</param>
+		/// <returns>El nombre del registro, la cadena vacia si el √≠ndice
+		/// indicado no es v√°lido.</returns>
 
 		public static String GetNombreRegistro(int reg)
 		{
@@ -147,7 +147,7 @@ namespace simple2.rutaDeDatos
 		}
 
 		/// <summary>Escribe el valor de un registro.</summary>
-		/// <param name="registro">El registro en el que se escribir·.</param>
+		/// <param name="registro">El registro en el que se escribir√°.</param>
 		/// <param name="valor">El valor a escribir.</param>
 		
 		public void EscribirRegistro (int registro, short valor)
@@ -173,7 +173,7 @@ namespace simple2.rutaDeDatos
 		}
 		
 		
-		/// <summary>AÒade un listener para las modificaciones en los 
+		/// <summary>A√±ade un listener para las modificaciones en los 
 		/// registros.</summary>
 		/// <param name="l">El listener.</param>
 		
@@ -183,7 +183,7 @@ namespace simple2.rutaDeDatos
 			listeners.Add(l);
 		}
 		
-		/// <summary>Notifica a los listeners de la modificaciÛn del valor
+		/// <summary>Notifica a los listeners de la modificaci√≥n del valor
 		/// de un registro.</summary>
 		/// <param name="dir">El registro modificado.</param>
 		/// <param name="newValue">El nuevo valor del registro.</param>

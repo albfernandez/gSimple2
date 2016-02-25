@@ -10,7 +10,7 @@ namespace simple2.representacionRuta
 	public abstract class ElementoDibujable : IElementoDibujable
 	{
 	
-		/// <summary>Superficie de dibujo sobre la que se dibujar· este
+		/// <summary>Superficie de dibujo sobre la que se dibujar√° este
 		/// objeto.</summary>
 		
 		protected InterfaceDibujo dibujo = null;
@@ -23,13 +23,13 @@ namespace simple2.representacionRuta
 		
 		public const EnuColor COLOR_INACTIVO = EnuColor.Negro;
 
-		/// <summary>Indica si el elemento est· activo o no.</summary>
+		/// <summary>Indica si el elemento est√° activo o no.</summary>
 
 		protected bool activo = false;
 				
 		/// <summary>Crea una instancia de la clase.</summary>
 		/// <param name="d">La superficie de dibujo sobre la que se 
-		/// dibujar· este objeto.</param>
+		/// dibujar√° este objeto.</param>
 		
 		protected ElementoDibujable(InterfaceDibujo d)
 		{
@@ -63,7 +63,7 @@ namespace simple2.representacionRuta
 			
 		}
 		
-		/// <summary>Obtiene el texto del objeto. En esta implementaciÛn
+		/// <summary>Obtiene el texto del objeto. En esta implementaci√≥n
 		/// por defecto devuelve la cadena vacia.</summary>
 		/// <returns>El texto del objeto.</returns>
 
@@ -72,7 +72,7 @@ namespace simple2.representacionRuta
 			return "";
 		}
 		
-		/// <summary>Establece el texto del objeto. En esta implementaciÛn
+		/// <summary>Establece el texto del objeto. En esta implementaci√≥n
 		/// por defecto no hace nada.</summary>
 		/// <param name="texto">El nuevo texto del objeto.</param>
 		
@@ -81,12 +81,12 @@ namespace simple2.representacionRuta
 			return;
 		}
 		
-		/// <summary>MÈtodo para dibujar el objeto en su estado
+		/// <summary>M√©todo para dibujar el objeto en su estado
 		/// inactivo.</summary>
 		
 		protected abstract void PintarInactivo();
 		
-		/// <summary>MÈtodo para dibujar el objeto en su estado
+		/// <summary>M√©todo para dibujar el objeto en su estado
 		/// activo.</summary>
 		
 		protected abstract void PintarActivo ();

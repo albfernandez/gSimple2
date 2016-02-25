@@ -2,10 +2,10 @@ namespace simple2.ensamblador
 {
 	/// <remarks> Esta clase es una "estructura" que almacena el numero de 
 	/// linea dentro del fichero que ocupa un objeto 
-	/// (instrucci髇, etiqueta...) y el correspodiente nuemero
+	/// (instrucci贸n, etiqueta...) y el correspodiente nuemero
 	/// de linea en el que aparece en el codigo fuente normalizado 
 	/// (sin lineas en blanco, cada etiqueta va seguida de la 
-	/// siguiente instrucci髇 si existe...</remarks>
+	/// siguiente instrucci贸n si existe...</remarks>
 
 	public class Pos_etiqueta
 	{
@@ -16,7 +16,7 @@ namespace simple2.ensamblador
 		public int linea_fichero;
 
 		/// <summary>Linea en la que aparece un objeto en el 
-		/// c骴igo fuente normalizado(limpio de comentarios
+		/// c贸digo fuente normalizado(limpio de comentarios
 		/// y lineas en blanco.</summary>
 		
 		public int linea_salida;
@@ -25,7 +25,7 @@ namespace simple2.ensamblador
 		/// <summary>Crea una instancia de la clase.</summary>
 		///
 		///<param name="e">Linea del fichero.</param>
-		///<param name="s">Linea en el c骴igo fuente limpio.</param>
+		///<param name="s">Linea en el c贸digo fuente limpio.</param>
 
 		public Pos_etiqueta (int e, int s)
 		{

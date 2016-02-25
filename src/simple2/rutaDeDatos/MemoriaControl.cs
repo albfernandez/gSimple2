@@ -12,7 +12,7 @@ namespace simple2.rutaDeDatos
 	
 	public class MemoriaControl
 	{
-		/// <summary>Número de palabras de 48 bits que almacena la memoria.
+		/// <summary>NÃºmero de palabras de 48 bits que almacena la memoria.
 		/// </summary>
 
 		public const int TAMANO = 1024;
@@ -29,7 +29,7 @@ namespace simple2.rutaDeDatos
 		{
 			ulong[]mem = new ulong[TAMANO];
 			
-			//Salto al microprograma de búsqueda y decodificación
+			//Salto al microprograma de bÃºsqueda y decodificaciÃ³n
 			mem[0] = 0x400000FF4000L;	
 			//;
 			//; Tabla de saltos
@@ -126,7 +126,7 @@ namespace simple2.rutaDeDatos
 			mem[0x121] = 0x805000000400L;
 			mem[0x122] = 0x401262FF0000L;
 			//;
-			//; Microprograma de búsqueda y decodificación
+			//; Microprograma de bÃºsqueda y decodificaciÃ³n
 			mem[0x3FC] = 0x001060000000L;
 			mem[0x3FD] = 0x00C000000000L;
 			mem[0x3FE] = 0x805300000400L;
@@ -141,7 +141,7 @@ namespace simple2.rutaDeDatos
 		/// <param name="texto">El texto que contiene definida la memoria
 		/// de control.</param>
 		/// <returns>La memoria de control.</returns>
-		/// <exception cref="MemParseException">Si se produce algún error
+		/// <exception cref="MemParseException">Si se produce algÃºn error
 		/// al procesar el texto.</exception>
 		
 		public static MemoriaControl CreateFromString (String texto)
@@ -186,7 +186,7 @@ namespace simple2.rutaDeDatos
 					
 					if (pos == -1)
 					{
-						//Error, no separamos la dirección de los datos.
+						//Error, no separamos la direcciÃ³n de los datos.
 						throw new MemParseException (
 							TextManager.GetText("MemControl_Err01"));
 					}
@@ -254,7 +254,7 @@ namespace simple2.rutaDeDatos
 		
 		/// <summary>Crea una instancia de la clase.</summary>
 		/// <param name="memoriaInicial">El contenido inicial de la memoria
-		/// de control. Si es <c>null</c>, entonces se cargará una por
+		/// de control. Si es <c>null</c>, entonces se cargarÃ¡ una por
 		/// defecto.</param>
 
 		public MemoriaControl (ulong[] memoriaInicial)
@@ -271,10 +271,10 @@ namespace simple2.rutaDeDatos
 			}
 		}
 
-		/// <summary>Lee una microinstrucción.</summary>
-		/// <param name="direccion">La dirección en la que se leerá
-		/// la microinstrucción.</param>
-		/// <returns>La microinstrución solicitada.</returns>
+		/// <summary>Lee una microinstrucciÃ³n.</summary>
+		/// <param name="direccion">La direcciÃ³n en la que se leerÃ¡
+		/// la microinstrucciÃ³n.</param>
+		/// <returns>La microinstruciÃ³n solicitada.</returns>
 
 		public MicroInstruccion LeerMicroInstruccion (short direccion)
 		{
@@ -290,7 +290,7 @@ namespace simple2.rutaDeDatos
 	{
 	
 		/// <summary>Crea una instancia de la clase.</summary>
-		/// <param name="mensaje">El mensaje de la excepción.</param>
+		/// <param name="mensaje">El mensaje de la excepciÃ³n.</param>
 		
 		public MemParseException (String mensaje):base(mensaje){}
 	}

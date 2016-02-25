@@ -5,15 +5,15 @@ namespace simple2.interfaz.gtk
 	using System;
 	using System.Reflection;
 
-	/// <remarks>Esta clase se encarga de cargar las im·genes guardadas
-	/// como recursos dentro del asembly.  Las im·genes est·n guardadas
-	/// como array de bytes y esta clase proporciona un mÈtodo para
+	/// <remarks>Esta clase se encarga de cargar las im√°genes guardadas
+	/// como recursos dentro del asembly.  Las im√°genes est√°n guardadas
+	/// como array de bytes y esta clase proporciona un m√©todo para
 	/// recuperarlas como Gdk.Pixbuf.</remarks>
 	
 	public class IconManager
 	{
 		/// <summary>ResourceManager encargado de cargar los recursos de
-		/// im·genes.</summary>
+		/// im√°genes.</summary>
 		
 		private static ResourceManager resPixmaps = null;
 		

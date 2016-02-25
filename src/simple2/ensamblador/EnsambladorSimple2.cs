@@ -7,7 +7,7 @@ namespace simple2.ensamblador
 	
 	using simple2.utilidades;
 
-	/// <remarks>Se encarga de verificar la correcta sint·xis de 
+	/// <remarks>Se encarga de verificar la correcta sint√°xis de 
 	/// un programa en ensamblador y de
 	/// ensamblarlo si es correcto.</remarks>
 
@@ -15,19 +15,19 @@ namespace simple2.ensamblador
 	{
 		/// <summary> Tabla donde se almacenan las instrucciones y 
 		/// los objetos InstruccionSimple2 que se encargan de 
-		/// su verficaciÛn y codificaciÛn.</summary>
+		/// su verficaci√≥n y codificaci√≥n.</summary>
 
 		private Hashtable instrucciones;
 
 		/// <summary>Tabla donde se almacena el nombre de la etiqueta 
-		/// con su correspondiente Pos_etiqueta, indicando la lÌnea 
+		/// con su correspondiente Pos_etiqueta, indicando la l√≠nea 
 		/// del texto en la que se encuentra la etiqueta y 
-		/// la direcciÛn que le corresponde.</summary>
+		/// la direcci√≥n que le corresponde.</summary>
 
 		private Hashtable etiquetasDeclaradas;
 
 		/// <summary>Tabla que almacena el nombre de la etiqueta y 
-		/// las lÌneas donde se utilizan.</summary>
+		/// las l√≠neas donde se utilizan.</summary>
 
 		private Hashtable etiquetasUsadas;
 
@@ -80,12 +80,12 @@ namespace simple2.ensamblador
 			instrucciones.Add ("SUBI", aritm);
 		}
 
-		/// <summary>Comprueba que se utilizan sÛlo etiquetas declaradas.
-		/// Adem·s, produce advertencias cuando se declaran
+		/// <summary>Comprueba que se utilizan s√≥lo etiquetas declaradas.
+		/// Adem√°s, produce advertencias cuando se declaran
 		/// etiquetas y no se utilizan.</summary>
 		///
 		/// <exception cref="gSimple2.Ensamblador.ErrorCodigoException">
-		/// Cuando el cÛdigo introducido no es v·lido</exception>
+		/// Cuando el c√≥digo introducido no es v√°lido</exception>
 		
 		private void ComprobarUsoEtiquetas ()
 		{
@@ -136,15 +136,15 @@ namespace simple2.ensamblador
 
 		/// <summary>Obtiene las advertencias.</summary>
 		/// <returns>Las advertencias sobre el uso de etiquetas
-		/// producidas al realizar la verificaciÛn del cÛdigo.</returns>
+		/// producidas al realizar la verificaci√≥n del c√≥digo.</returns>
 
 		public String GetAdvertencias ()
 		{
 			return Advertencias;
 		}
 	
-		/// <summary> Comprueba que un nombre de etiqueta est· compuesto 
-		/// de los car·cteres permitidos: comenzar con una letra, 
+		/// <summary> Comprueba que un nombre de etiqueta est√° compuesto 
+		/// de los car√°cteres permitidos: comenzar con una letra, 
 		/// y continuar con letras, numeros o _. </summary>
 		///
 		/// <exception cref="gSimple2.Ensamblador.ErrorCodigoException">
@@ -174,12 +174,12 @@ namespace simple2.ensamblador
 			}
 		}
 		
-		/// <summary>Comprueba que el formato de la definiciÛn de una 
-		/// etiqueta es correcto, y que no estÈ previamente definida.
+		/// <summary>Comprueba que el formato de la definici√≥n de una 
+		/// etiqueta es correcto, y que no est√© previamente definida.
 		/// </summary>
 		///
 		/// <exception cref="gSimple2.Ensamblador.ErrorCodigoException">
-		/// Cuando la declaraciÛn no es v·lida</exception>
+		/// Cuando la declaraci√≥n no es v√°lida</exception>
 		/// <param name="etiqueta">La etiqueta a comprobar.</param>
 		
 		private void ComprobarDeclaracionEtiqueta (String etiqueta)
@@ -205,7 +205,7 @@ namespace simple2.ensamblador
 			}
 		}
 	
-		/// <summary>Quita los comentarios y los espacios de la instrucciÛn
+		/// <summary>Quita los comentarios y los espacios de la instrucci√≥n
 		/// para dejarla "limpia" para poderla codificar.</summary>
 		///
 		/// <param name="linea">La linea a procesar.</param>
@@ -243,12 +243,12 @@ namespace simple2.ensamblador
 			return tmp;
 		}
 
-		/// <summary>Realiza la verificaciÛn del cÛdigo.</summary>
+		/// <summary>Realiza la verificaci√≥n del c√≥digo.</summary>
 		/// <exception cref="gSimple2.Ensamblador.ErrorCodigoException">
-		/// Cuando el cÛdigo no es correcto.</exception>
-		/// <param name="codigo">El cÛdigo a verificar, en forma de lista de 
+		/// Cuando el c√≥digo no es correcto.</exception>
+		/// <param name="codigo">El c√≥digo a verificar, en forma de lista de 
 		/// lineas.</param>
-		/// <returns>El cÛdigo procesado listo para ensamblar.</returns>
+		/// <returns>El c√≥digo procesado listo para ensamblar.</returns>
 
 		private ArrayList PrimeraPasada (ArrayList codigo)
 		{
@@ -276,7 +276,7 @@ namespace simple2.ensamblador
 				else if (instruc.IndexOf (":") > 0)
 				{
 					// Si tiene ":" (pero no en el principio) 
-					// analizar si la etiqueta es v·lida
+					// analizar si la etiqueta es v√°lida
 					String etiqueta =
 						instruc.Substring (0, instruc.IndexOf (":"));
 
@@ -364,12 +364,12 @@ namespace simple2.ensamblador
 			return salida;
 		}
 
-		/// <summary>Realiza la verificaciÛn del cÛdigo.</summary>
+		/// <summary>Realiza la verificaci√≥n del c√≥digo.</summary>
 		/// <exception cref="gSimple2.Ensamblador.ErrorCodigoException">
-		/// Cuando el cÛdigo no es correcto.</exception>
-		/// <param name="codigo">El cÛdigo a verificar, en forma de cadena
+		/// Cuando el c√≥digo no es correcto.</exception>
+		/// <param name="codigo">El c√≥digo a verificar, en forma de cadena
 		/// de texto.</param>
-		/// <returns>El cÛdigo procesado listo para ensamblar.</returns>
+		/// <returns>El c√≥digo procesado listo para ensamblar.</returns>
 		
 		public ArrayList PrimeraPasada (String codigo)
 		{
@@ -394,9 +394,9 @@ namespace simple2.ensamblador
 			return (PrimeraPasada (v0));
 		}
 		
-		/// <summary>Ensambla un cÛdigo ya verificado.</summary>
-		/// <param name="codigo">El cÛdigo procesado a ensamblar.</param>
-		/// <returns>El cÛdigo ensamblado en binario</returns>
+		/// <summary>Ensambla un c√≥digo ya verificado.</summary>
+		/// <param name="codigo">El c√≥digo procesado a ensamblar.</param>
+		/// <returns>El c√≥digo ensamblado en binario</returns>
 	
 		public short[] Ensamblar (ArrayList codigo)
 		{
@@ -446,9 +446,9 @@ namespace simple2.ensamblador
 			return false;
 		}
 	
-		/// <summary>Separa una instrucciÛn en sus operandos.</summary>
-		/// <param name="linea">La instrucciÛn a descomponer</param>
-		/// <returns>Los componentes de la instrucciÛn.</returns>
+		/// <summary>Separa una instrucci√≥n en sus operandos.</summary>
+		/// <param name="linea">La instrucci√≥n a descomponer</param>
+		/// <returns>Los componentes de la instrucci√≥n.</returns>
 		
 		public static String[] SepararOperandos (String linea)
 		{

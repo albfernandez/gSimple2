@@ -7,15 +7,15 @@ namespace simple2.rutaDeDatos
 	public interface MemoryChangeListener
 	{
 		
-		/// <summary>Se llama cuando cambia una posición de la memoria.
+		/// <summary>Se llama cuando cambia una posiciÃ³n de la memoria.
 		/// </summary>
-		/// <param name="dir">La dirección que ha cambiado.</param>
-		/// <param name="newValue">El nuevo valor de la posición de 
+		/// <param name="dir">La direcciÃ³n que ha cambiado.</param>
+		/// <param name="newValue">El nuevo valor de la posiciÃ³n de 
 		/// memoria <c>dir</c>.</param>
 		
 		void MemoryChanged (int dir, short newValue);
 		
-		/// <summary>Se llama para inicializar el listener, pasándole un
+		/// <summary>Se llama para inicializar el listener, pasÃ¡ndole un
 		/// array con el contenido de toda la memoria.</summary>
 		/// <param name="newMemoryValues">Los valores almacenados en 
 		/// la memoria.</param>

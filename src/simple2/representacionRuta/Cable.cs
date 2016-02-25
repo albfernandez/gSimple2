@@ -13,7 +13,7 @@ namespace simple2.representacionRuta
 		
 		/// <summary>Crea una instancia de la clase.</summary>
 		/// <param name="dib">La superficie de dibujo sobre la que
-		/// se dibujar· este objeto.</param>
+		/// se dibujar√° este objeto.</param>
 		/// <param name="puntos">Las coordenadas de las rectas
 		/// que componen el cable.</param>
 		
@@ -23,7 +23,7 @@ namespace simple2.representacionRuta
 		}
 				
 		/// <summary>Pinta una punta de flecha al final del cable.</summary>
-		/// <param name="color">El color en el que se pintar· la flecha.
+		/// <param name="color">El color en el que se pintar√° la flecha.
 		/// </param>
 
 		protected void PintarFlechaFin (EnuColor color)
@@ -36,7 +36,7 @@ namespace simple2.representacionRuta
 		
 		/// <summary>Dibuja una punta de flecha al principio del cable.
 		/// </summary>
-		/// <param name="color">El color en el que se pintar· la flecha.
+		/// <param name="color">El color en el que se pintar√° la flecha.
 		/// </param>
 
 		protected void PintarFlechaInicio (EnuColor color)
@@ -46,12 +46,12 @@ namespace simple2.representacionRuta
 		}
 		
 		/// <summary> Pinta una punta de flecha al final de la 
-		/// lÌnea indicada.(SÛlo lineas horizontales y verticales).
+		/// l√≠nea indicada.(S√≥lo lineas horizontales y verticales).
 		/// </summary>
-		/// <param name="color">El color en el que se pintar· la flecha.
+		/// <param name="color">El color en el que se pintar√° la flecha.
 		/// </param>
 		/// <param name="linea">Las coordenadas de la linea al fin de la
-		/// cual se pondr· la flecha.</param>
+		/// cual se pondr√° la flecha.</param>
 		
 		private void PintarFlecha (EnuColor color, int[] linea)
 		{
@@ -63,7 +63,7 @@ namespace simple2.representacionRuta
 			int y1 = 0;
 			int y2 = 0;
 			
-			if (linea[0] == linea[2]) // es una lÌnea vertical
+			if (linea[0] == linea[2]) // es una l√≠nea vertical
 			{
 				x1 = linea[0] -5;
 				x2 = linea[0] +5;
@@ -97,7 +97,7 @@ namespace simple2.representacionRuta
 		
 		
 		/// <summary>Pinta la linea que compone el cable.</summary>
-		/// <param name="color">El color en el que se pintar· el cable.
+		/// <param name="color">El color en el que se pintar√° el cable.
 		/// </param>
 		
 		private void PintarCable (EnuColor color)
@@ -115,7 +115,7 @@ namespace simple2.representacionRuta
 			}
 		}
 		
-		/// <summary>MÈtodo para dibujar el objeto en su estado
+		/// <summary>M√©todo para dibujar el objeto en su estado
 		/// inactivo.</summary>
 		
 		protected override void PintarInactivo ()
@@ -123,7 +123,7 @@ namespace simple2.representacionRuta
 			this.PintarCable (COLOR_INACTIVO);
 		}
 		
-		/// <summary>MÈtodo para dibujar el objeto en su estado
+		/// <summary>M√©todo para dibujar el objeto en su estado
 		/// activo.</summary>
 		
 		protected override void PintarActivo ()

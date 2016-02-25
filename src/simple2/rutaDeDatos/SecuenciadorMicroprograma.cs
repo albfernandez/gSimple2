@@ -26,7 +26,7 @@ namespace simple2.rutaDeDatos
 		private short _mar = 0;
 		
 		/// <summary>Almacena el contenido de MBR, el registro que contiene
-		///  los datos le韉os/ a escribir de memoria.</summary>
+		///  los datos le铆dos/ a escribir de memoria.</summary>
 		
 		private short _mbr = 0;
 		
@@ -45,7 +45,7 @@ namespace simple2.rutaDeDatos
 		private int subciclos = 0;
 		
 		/// <summary>Almacena el contenido de RMC, es decir, la 
-		/// microinstrucci髇 a ejecutar.</summary>
+		/// microinstrucci贸n a ejecutar.</summary>
 		
 		private MicroInstruccion rmc = null;
 		
@@ -83,7 +83,7 @@ namespace simple2.rutaDeDatos
 		}
 		
 		/// <summary>Actualiza el contenido del registro MBR y de
-		/// la memoria seg鷑 la secuencia de mInstrucciones.</summary>
+		/// la memoria seg煤n la secuencia de mInstrucciones.</summary>
 		/// <param name="inst"></param>
 		
 		private void ActualizarPeticionesMemoria (MicroInstruccion  inst)
@@ -124,7 +124,7 @@ namespace simple2.rutaDeDatos
 		/// <summary>Ejecuta el siguiente subciclo en la ruta de datos.
 		/// </summary>
 		/// <exception cref="SimulacionFinalizadaException> cuando la 
-		/// simulaci髇 ha finalizado (se ha cargado la instrucci髇 
+		/// simulaci贸n ha finalizado (se ha cargado la instrucci贸n 
 		/// HALT = 0xF800 en el registro IR).</exception>
 
 		public void EjecutarSubciclo ()
@@ -144,13 +144,13 @@ namespace simple2.rutaDeDatos
 			subciclos++;
 		}
 		
-		/// <summary><para>Ejecuta el primer subciclo de la microinstrucci髇.
+		/// <summary><para>Ejecuta el primer subciclo de la microinstrucci贸n.
 		/// </para>
-		/// <para>En 閘, lo que hace es cargar en RMC la microinstrucci髇
-		/// situada en la direcci髇 indicada por RDC en la memoria de control.
+		/// <para>En 茅l, lo que hace es cargar en RMC la microinstrucci贸n
+		/// situada en la direcci贸n indicada por RDC en la memoria de control.
 		/// </para></summary>
 		/// <exception cref="SimulacionFinalizadaException> cuando la 
-		/// simulaci髇 ha finalizado (se ha cargado la instrucci髇 
+		/// simulaci贸n ha finalizado (se ha cargado la instrucci贸n 
 		/// HALT = 0xF800 en el registro IR).</exception>
 		
 		private void EjecutarSubciclo1()
@@ -160,17 +160,17 @@ namespace simple2.rutaDeDatos
 				throw new SimulacionFinalizadaException ("Fin normal");
 			}
 			
-			//Leemos la siguiente microinstrucci髇 de la memoria de control
+			//Leemos la siguiente microinstrucci贸n de la memoria de control
 			rmc = memoriaControl.LeerMicroInstruccion (RDC);
 
 			repRdd.DibujarCiclo1(rmc, RDC);
 		}
 		
-		/// <summary><para>Ejecuta el segundo subciclo de la microinstrucci髇.
+		/// <summary><para>Ejecuta el segundo subciclo de la microinstrucci贸n.
 		/// </para>
-		/// <para>En 閘, se cargan el bufferA y bufferB los contenidos de 
+		/// <para>En 茅l, se cargan el bufferA y bufferB los contenidos de 
 		/// los registros indicados en los campos A y B de la 
-		/// microinstrucci髇.</para></summary>
+		/// microinstrucci贸n.</para></summary>
 		
 		private void EjecutarSubciclo2()
 		{
@@ -181,13 +181,13 @@ namespace simple2.rutaDeDatos
 				repRdd.DibujarCiclo2(rmc, regA, regB);
 		}
 		
-		/// <summary><para>Ejecuta el tercer subciclo de la microinstrucci髇.
+		/// <summary><para>Ejecuta el tercer subciclo de la microinstrucci贸n.
 		/// </para>
-		/// <para>En 閘:
+		/// <para>En 茅l:
 		///	   <list type="bullet">
 		///	   <item><description>
-		///    se ejecuta la operaci髇 de la ALU 
-		///    (indicada en el campo ALU de la microinstrucci髇)
+		///    se ejecuta la operaci贸n de la ALU 
+		///    (indicada en el campo ALU de la microinstrucci贸n)
 		///    </description></item>
 		///    <item><description>
 		///    Desplaza el resultado obtenido en la ALU en el registro SH.
@@ -219,9 +219,9 @@ namespace simple2.rutaDeDatos
 				alu.LeerC(), alu.LeerN(), alu.LeerZ());
 		}
 		
-		/// <summary><para>Ejecuta el cuarto subciclo de la microinstrucci髇.
+		/// <summary><para>Ejecuta el cuarto subciclo de la microinstrucci贸n.
 		/// </para>
-		/// <para>En 閘:
+		/// <para>En 茅l:
 		///    <list type="bullet">
 		///    <item><description>
 		///    Almacenamos el contenido de SH en el banco de registros.
@@ -230,7 +230,7 @@ namespace simple2.rutaDeDatos
 		///    Si es necesario copiamos SH a MBR.
 		///    </description></item>
 		///    <item><description>
-		///    Obtenemos en RDC la direcci髇 de la siguiente microinstrucci髇
+		///    Obtenemos en RDC la direcci贸n de la siguiente microinstrucci贸n
 		///    a ejecutar.
 		///    </description></item>
 		///    </list>
@@ -267,7 +267,7 @@ namespace simple2.rutaDeDatos
 			repRdd.DibujarCiclo4(rmc, _mbr);
 		}
 		
-		/// <summary>Detiene la simulaci髇 de la ruta de datos</summary>
+		/// <summary>Detiene la simulaci贸n de la ruta de datos</summary>
 		
 		public void Detener ()
 		{
@@ -297,7 +297,7 @@ namespace simple2.rutaDeDatos
 			return true;
 		}
 		
-		/// <summary>A馻de un listener para los cambios de memoria.</summary>
+		/// <summary>A帽ade un listener para los cambios de memoria.</summary>
 		/// <param name="l">El listener.</param>
 		
 		public void AddMemoryChangeListener (MemoryChangeListener l)
@@ -305,7 +305,7 @@ namespace simple2.rutaDeDatos
 			mp.AddMemoryChangeListener (l);
 		}
 		
-		/// <summary>A馻de un listener para los cambios de los registros.
+		/// <summary>A帽ade un listener para los cambios de los registros.
 		/// </summary>
 		/// <param name="l">El listener.</param>
 		
@@ -314,9 +314,9 @@ namespace simple2.rutaDeDatos
 			registros.AddRegisterChangeListener(l);
 		}
 		
-		/// <summary>Establece la representaci髇 de ruta de datos a utilizar
+		/// <summary>Establece la representaci贸n de ruta de datos a utilizar
 		/// para dibujar.</summary>
-		/// <param name="r">La representaci髇.</param>
+		/// <param name="r">La representaci贸n.</param>
 		
 		public void SetRepresentacionRDD(IRepresentacionRDD r)
 		{

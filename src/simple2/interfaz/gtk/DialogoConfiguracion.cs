@@ -12,25 +12,25 @@ namespace simple2.interfaz.gtk
 	using simple2.rutaDeDatos;
 	using simple2.utilidades;
 	
-	/// <remarks>Esta clase es el di·logo de configuraciÛn de la
-	/// aplicaciÛn.</remarks>
+	/// <remarks>Esta clase es el di√°logo de configuraci√≥n de la
+	/// aplicaci√≥n.</remarks>
 	
 	public class DialogoConfiguracion : Gtk.Dialog
 	{
 		
-		/// <summary>Unica instancia de esta clase (patrÛn Singleton)
+		/// <summary>Unica instancia de esta clase (patr√≥n Singleton)
 		/// </summary>
 		
 		private static DialogoConfiguracion instancia = null;
 		
-		/// <summary>BotÛn cancelar. Cuando se pulsa sobre Èl se oculta el
-		/// di·logo y no se aplican los cambios.</summary>
+		/// <summary>Bot√≥n cancelar. Cuando se pulsa sobre √©l se oculta el
+		/// di√°logo y no se aplican los cambios.</summary>
 		
 		private Gtk.Button btnCancelar;
 		
-		/// <summary>BotÛn aceptar. Cuando se pulsa sobre Èl se comprueba
+		/// <summary>Bot√≥n aceptar. Cuando se pulsa sobre √©l se comprueba
 		/// la validez de las opciones, se aplican los cambios y se oculta
-		/// el di·logo.</summary>
+		/// el di√°logo.</summary>
 		
 		private Gtk.Button btnAceptar;
 		
@@ -44,12 +44,12 @@ namespace simple2.interfaz.gtk
 		
 		private Gtk.SpinButton sbTiempo = null;
 		
-		/// <summary>RadioButton.  Si est· seleccionado, se usar· la memoria
+		/// <summary>RadioButton.  Si est√° seleccionado, se usar√° la memoria
 		/// de control por defecto.</summary>
 		
 		private Gtk.RadioButton rbMemoriaDef = null;
 		
-		/// <summary>RadioButton. Si est· seleccionado, se usar· la memoria
+		/// <summary>RadioButton. Si est√° seleccionado, se usar√° la memoria
 		/// de control indicada por el usuario.</summary>
 		
 		private Gtk.RadioButton rbMemoriaUsu = null;
@@ -64,11 +64,11 @@ namespace simple2.interfaz.gtk
 		
 		private Gtk.FileSelection selectorFicheros = null;
 
-		/// <summary>BotÛn para mostrar el selector de ficheros.</summary>
+		/// <summary>Bot√≥n para mostrar el selector de ficheros.</summary>
 		
 		private Gtk.Button btnFichero = null;
 
-		/// <summary>Obtiene la ˙nica instancia de la clase (patrÛn
+		/// <summary>Obtiene la √∫nica instancia de la clase (patr√≥n
 		/// Singleton).</summary>
 		
 		public static DialogoConfiguracion GetInstance()
@@ -79,7 +79,7 @@ namespace simple2.interfaz.gtk
 		}
 
 		/// <summary>Crea una instancia de la clase.</summary>
-		/// <param name="parent">La ventana padre de este di·logo.</param>
+		/// <param name="parent">La ventana padre de este di√°logo.</param>
 		
 		private DialogoConfiguracion (Gtk.Window parent):
 			base ("", parent, Gtk.DialogFlags.DestroyWithParent)
@@ -97,7 +97,7 @@ namespace simple2.interfaz.gtk
 		}
 		
 		/// <summary>Crea las hojas de las opciones, la parte central
-		/// del di·logo.</summary>
+		/// del di√°logo.</summary>
 		/// <returns>El notebook de las opciones.</returns>
 		
 		private Gtk.Widget CrearNotebook ()
@@ -105,7 +105,7 @@ namespace simple2.interfaz.gtk
 			Gtk.Notebook notebook = new Gtk.Notebook();
 			notebook.BorderWidth = 10;
 			
-			// Panel de configuraciÛn del ensamblador.
+			// Panel de configuraci√≥n del ensamblador.
 			
 			cbAdvertencias = new Gtk.CheckButton (
 				Ventana.GetText ("D_Conf_MostrarAdv"));
@@ -175,7 +175,7 @@ namespace simple2.interfaz.gtk
 			return notebook;
 		}
 		
-		/// <summary>Crea el panel inferior del di·logo, el que contiene
+		/// <summary>Crea el panel inferior del di√°logo, el que contiene
 		/// los botones aceptar y cancelar.</summary>
 		/// <returns>El panel creado.</returns>
 		
@@ -192,12 +192,12 @@ namespace simple2.interfaz.gtk
 			return hbox;
 		}
 		
-		/// <summary>FunciÛn que se ejecuta al pulsar sobre el botÛn
-		/// para seleccionar fichero. Muestra el di·logo de selecciÛn
+		/// <summary>Funci√≥n que se ejecuta al pulsar sobre el bot√≥n
+		/// para seleccionar fichero. Muestra el di√°logo de selecci√≥n
 		/// de archivos.</summary>
-		/// <param name="o">El objeto que llama a la funciÛn.</param>
+		/// <param name="o">El objeto que llama a la funci√≥n.</param>
 		/// <param name="args">Los argumentos que se le pasan a la 
-		/// funciÛn.</param>
+		/// funci√≥n.</param>
 		
 		private void btnFicheroClicked (object o, System.EventArgs args)
 		{
@@ -217,11 +217,11 @@ namespace simple2.interfaz.gtk
 			selectorFicheros.ShowAll();			
 		}
 		
-		/// <summary>FunciÛn que se ejecuta al pulsar sobre el botÛn aceptar
+		/// <summary>Funci√≥n que se ejecuta al pulsar sobre el bot√≥n aceptar
 		/// del selector de ficheros.</summary>
-		/// <param name="o">El objeto que llama a la funciÛn.</param>
+		/// <param name="o">El objeto que llama a la funci√≥n.</param>
 		/// <param name="args">Los argumentos que se le pasan a la 
-		/// funciÛn.</param>
+		/// funci√≥n.</param>
 		
 		private void SelectorFicherosOkPulsado (object o, EventArgs args)
 		{
@@ -245,24 +245,24 @@ namespace simple2.interfaz.gtk
 			
 		}
 		
-		/// <summary>FunciÛn que se ejecuta al pulsar sobre el botÛn
+		/// <summary>Funci√≥n que se ejecuta al pulsar sobre el bot√≥n
 		/// cancelar del selector de ficheros. Oculta el selector.</summary>
-		/// <param name="o">El objeto que llama a la funciÛn.</param>
+		/// <param name="o">El objeto que llama a la funci√≥n.</param>
 		/// <param name="args">Los argumentos que se le pasan a la 
-		/// funciÛn.</param>
+		/// funci√≥n.</param>
 		
 		private void SelectorFicherosCancelPulsado (object o, EventArgs args)
 		{
 			selectorFicheros.Hide();
 		}
 		
-		/// <summary>FunciÛn que se ejecuta al pulsar sobre el botÛn
+		/// <summary>Funci√≥n que se ejecuta al pulsar sobre el bot√≥n
 		/// selector de la memoria por defecto. Desactiva el campo
-		/// de entrada de texto y el botÛn que llama al selector de
+		/// de entrada de texto y el bot√≥n que llama al selector de
 		/// ficheros.</summary>
-		/// <param name="o">El objeto que llama a la funciÛn.</param>
+		/// <param name="o">El objeto que llama a la funci√≥n.</param>
 		/// <param name="args">Los argumentos que se le pasan a la 
-		/// funciÛn.</param>
+		/// funci√≥n.</param>
 		
 		private void rbToggled1 (object o, System.EventArgs args)
 		{
@@ -274,13 +274,13 @@ namespace simple2.interfaz.gtk
 			}
 		}
 		
-		/// <summary>FunciÛn que se ejecuta al pulsar sobre el botÛn
+		/// <summary>Funci√≥n que se ejecuta al pulsar sobre el bot√≥n
 		/// selector de la memoria definida por el usuario. Activa el 
-		/// campo de entrada de texto y el botÛn que llama al selector
+		/// campo de entrada de texto y el bot√≥n que llama al selector
 		/// de ficheros.</summary>
-		/// <param name="o">El objeto que llama a la funciÛn.</param>
+		/// <param name="o">El objeto que llama a la funci√≥n.</param>
 		/// <param name="args">Los argumentos que se le pasan a la 
-		/// funciÛn.</param>
+		/// funci√≥n.</param>
 		
 		private void rbToggled2 (object o, System.EventArgs args)
 		{
@@ -292,12 +292,12 @@ namespace simple2.interfaz.gtk
 			}
 		}
 		
-		/// <summary>FunciÛn que se ejecuta al pulsar sobre el botÛn
-		/// aceptar del di·logo. Comprueba que los datos introducidos
+		/// <summary>Funci√≥n que se ejecuta al pulsar sobre el bot√≥n
+		/// aceptar del di√°logo. Comprueba que los datos introducidos
 		/// son correctos y los aplica.</summary>
-		/// <param name="o">El objeto que llama a la funciÛn.</param>
+		/// <param name="o">El objeto que llama a la funci√≥n.</param>
 		/// <param name="args">Los argumentos que se le pasan a la 
-		/// funciÛn.</param>
+		/// funci√≥n.</param>
 		
 		private void AceptarClick(object o, System.EventArgs args)
 		{
@@ -347,18 +347,18 @@ namespace simple2.interfaz.gtk
 			this.HideAll();
 		}
 		
-		/// <summary>FunciÛn que se llama cuando se pulsa el botÛn cancelar
-		/// del di·logo. Oculta el di·logo.</summary>
-		/// <param name="o">El objeto que llama a la funciÛn.</param>
+		/// <summary>Funci√≥n que se llama cuando se pulsa el bot√≥n cancelar
+		/// del di√°logo. Oculta el di√°logo.</summary>
+		/// <param name="o">El objeto que llama a la funci√≥n.</param>
 		/// <param name="args">Los argumentos que se le pasan a la 
-		/// funciÛn.</param>
+		/// funci√≥n.</param>
 		
 		private void CancelarClick(object o, System.EventArgs args)
 		{
 			this.HideAll();
 		}
 		
-		/// <summary>FunciÛn que muestra el di·logo centrado en la ventana
+		/// <summary>Funci√≥n que muestra el di√°logo centrado en la ventana
 		/// padre. Establece los valores de las opciones actuales en los
 		/// elementos visuales que las representan.</summary>
 

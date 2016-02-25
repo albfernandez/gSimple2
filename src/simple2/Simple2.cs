@@ -5,7 +5,7 @@ namespace simple2
 	using System;
 	using simple2.interfaz.gtk;
 
-	/// <remarks>Clase que contiene el método principal de la aplicación.
+	/// <remarks>Clase que contiene el mÃ©todo principal de la aplicaciÃ³n.
 	/// </remarks>
 	
 	public class Simple2
@@ -18,8 +18,8 @@ namespace simple2
 		{
 		}
 		
-		/// <summary>Función principal de la aplicación.</summary>
-		/// <param name="args">Los parámetros pasados desde la línea de
+		/// <summary>FunciÃ³n principal de la aplicaciÃ³n.</summary>
+		/// <param name="args">Los parÃ¡metros pasados desde la lÃ­nea de
 		/// comandos.</param>
 		
 		public static void Main (String[]args)

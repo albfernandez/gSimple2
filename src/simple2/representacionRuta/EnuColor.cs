@@ -1,7 +1,7 @@
 namespace simple2.representacionRuta
 {
 	
-	/// <remarks>Enumeración de colores.</remarks>
+	/// <remarks>EnumeraciÃ³n de colores.</remarks>
 	
 	public enum EnuColor
 	{

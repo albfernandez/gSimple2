@@ -3,7 +3,7 @@
 	using simple2.rutaDeDatos;
 	using simple2.hilos;
 	
-	/// <summary>Este hilo se encarga de llamar a la simulaciÛn de la ruta
+	/// <summary>Este hilo se encarga de llamar a la simulaci√≥n de la ruta
 	/// de datos paso a paso.</summary>
 
 	public class HiloEjecucion : Hilo
@@ -12,15 +12,15 @@
 		
 		private SecuenciadorMicroprograma mic = null;
 		
-		/// <summary>Indica si se debe terminar la simulaciÛn.</summary>
+		/// <summary>Indica si se debe terminar la simulaci√≥n.</summary>
 		
 		private bool terminar = false;
 		
-		/// <summary>Indica si la simulaciÛn est· pausada.</summary>
+		/// <summary>Indica si la simulaci√≥n est√° pausada.</summary>
 		
 		private bool pausado = false;
 		
-		/// <summary>Indica el tiempo que esperar· entre subciclos.</summary>
+		/// <summary>Indica el tiempo que esperar√° entre subciclos.</summary>
 		
 		private int tSubciclo = 1000;
 		
@@ -33,7 +33,7 @@
 			this.mic = mic;
 		}
 		
-		/// <summary>MÈtodo de ejecuciÛn del hilo.</summary>
+		/// <summary>M√©todo de ejecuci√≥n del hilo.</summary>
 		
 		public override void Run ()
 		{
@@ -70,7 +70,7 @@
 			}
 		}
 		
-		/// <summary>Detiene la ejecuciÛn del hilo.</summary>
+		/// <summary>Detiene la ejecuci√≥n del hilo.</summary>
 		
 		public override void Abort ()
 		{
@@ -86,8 +86,8 @@
 			}
 		}
 		
-		/// <summary>Nos indica si el hilo est· pausado.</summary>
-		/// <returns><c>true</c> si el hilo est· pausado, <c>false</c>
+		/// <summary>Nos indica si el hilo est√° pausado.</summary>
+		/// <returns><c>true</c> si el hilo est√° pausado, <c>false</c>
 		/// en otro caso.</returns>
 		
 		public bool GetPausado()
@@ -95,15 +95,15 @@
 			return this.pausado;
 		}
 		
-		/// <summary>Detiene y reanuda la ejecuciÛn del hilo.</summary>
+		/// <summary>Detiene y reanuda la ejecuci√≥n del hilo.</summary>
 		
 		public void CambiarPausado ()
 		{
 			pausado = !pausado;
 		}
 		
-		/// <summary>Establece el tiempo que durar· cada subciclo.</summary>
-		/// <param name="valor">El tiempo en ms que durar· cada 
+		/// <summary>Establece el tiempo que durar√° cada subciclo.</summary>
+		/// <param name="valor">El tiempo en ms que durar√° cada 
 		/// subciclo.</param>
 		
 		public void SetTSubciclo (int valor)

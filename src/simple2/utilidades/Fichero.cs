@@ -3,7 +3,7 @@ namespace simple2.utilidades
 	using System;
 	using System.IO;
 
-	/// <remarks>Esta clase contiene mÈtodos para leer y escribir ficheros.
+	/// <remarks>Esta clase contiene m√©todos para leer y escribir ficheros.
 	/// </remarks>
 	
 	public class Fichero
@@ -45,7 +45,7 @@ namespace simple2.utilidades
 		
 		/// <summary>Guarda un texto en el archivo indicado.</summary>
 		/// <param name="nombreFichero">La ruta del fichero en el que
-		/// se guardar· el texto. Si no existe se crear·.</param>
+		/// se guardar√° el texto. Si no existe se crear√°.</param>
 		/// <param name="texto">El texto a guardar.</param>
 		
 		public static void GuardarTexto (String nombreFichero, String texto)

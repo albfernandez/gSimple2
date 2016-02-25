@@ -13,19 +13,19 @@ namespace simple2.interfaz.gtk
 	/// <summary>Clase utilizada para representar la ruta de datos
 	/// del ordenador Simple2 en la pantalla.</summary>
 	/// <remarks>La clase representa un espacio virtual de dibujo.
-	/// Las operaciones se realizan sobre un lienzo virtual de tamaÒo 
-	/// fijo. La clase se encarga de dibujarlos utilizando el tamaÒo
+	/// Las operaciones se realizan sobre un lienzo virtual de tama√±o 
+	/// fijo. La clase se encarga de dibujarlos utilizando el tama√±o
 	/// real disponible, manteniendo el aspecto (salvo para el texto).
 	/// </remarks>
 
 	public class PanelDibujo: Gtk.DrawingArea, InterfaceDibujo
 	{
-		/// <summary>Pixmap sobre el que se dibujar· para realizar
+		/// <summary>Pixmap sobre el que se dibujar√° para realizar
 		/// el DoubleBuffering.</summary>
 		
 		private Gdk.Pixmap pixmap;
 		
-		/// <summary>El espacio de pantalla sobre el que se dibujar·.
+		/// <summary>El espacio de pantalla sobre el que se dibujar√°.
 		/// </summary>
 		
 		private Gdk.Window window;
@@ -46,7 +46,7 @@ namespace simple2.interfaz.gtk
 		
 		public const double ALTO = 470;
 		
-		/// <summary>Objeto que pintar· sobre el lienzo.</summary>
+		/// <summary>Objeto que pintar√° sobre el lienzo.</summary>
 		
 		private RepresentacionRDD rdd = null;
 		
@@ -95,9 +95,9 @@ namespace simple2.interfaz.gtk
 			this.layout = new Pango.Layout(this.PangoContext);			
 		}
 		
-		/// <summary>Establece el objeto RepresentacionRDD que dibujar·
+		/// <summary>Establece el objeto RepresentacionRDD que dibujar√°
 		/// sobre este lienzo. Es utilizado para notificarle de los cambios
-		/// de tamaÒo del lienzo, de modo que se redibuje entero de nuevo.
+		/// de tama√±o del lienzo, de modo que se redibuje entero de nuevo.
 		/// </summary>
 		/// <param name="r"></param>
 		
@@ -106,8 +106,8 @@ namespace simple2.interfaz.gtk
 			this.rdd = r;
 		}
 		
-		/// <summary>FunciÛn que se llama cuando el objeto es "expuesto" (se
-		/// muestra despuÈs de estar oculto) para que se redibuje.</summary>
+		/// <summary>Funci√≥n que se llama cuando el objeto es "expuesto" (se
+		/// muestra despu√©s de estar oculto) para que se redibuje.</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 		
@@ -137,8 +137,8 @@ namespace simple2.interfaz.gtk
 			}
 		}
 		
-		/// <summary>FunciÛn encargada de responder a los cambios de 
-		/// tamaÒo del lienzo de dibujo.</summary>
+		/// <summary>Funci√≥n encargada de responder a los cambios de 
+		/// tama√±o del lienzo de dibujo.</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param> 
 		
@@ -163,9 +163,9 @@ namespace simple2.interfaz.gtk
 			}
 		}
 		
-		/// <summary>Calcula la posiciÛn X en la que se debe dibujar
+		/// <summary>Calcula la posici√≥n X en la que se debe dibujar
 		/// un elemento. Para ello multiplica el valor pasado
-		/// por el ancho real del ·rea de dibujo, y lo divide
+		/// por el ancho real del √°rea de dibujo, y lo divide
 		/// entre el ancho virtual.</summary>
 		/// <param name="x">La coordenada virtual x.</param>
 		/// <returns>La coordenada real correspondiente a la coordenada
@@ -176,9 +176,9 @@ namespace simple2.interfaz.gtk
 			return (int) (x *   Ancho / ANCHO);
 		}
 		
-		/// <summary>Calcula la posiciÛn Y en la que se debe dibujar
+		/// <summary>Calcula la posici√≥n Y en la que se debe dibujar
 		/// un elemento. Para ello multiplica el valor pasado por el
-		/// alto real del ·rea de dibujo, y lo divide entre el alto
+		/// alto real del √°rea de dibujo, y lo divide entre el alto
 		/// virtual.</summary>
 		/// <param name="y">La coordenada virtual y.</param>
 		/// <returns>La coordenada real correspondiente a la coordenada 
@@ -189,10 +189,10 @@ namespace simple2.interfaz.gtk
 			return (int)(y * Alto / ALTO);
 		}
 		
-		/// <summary>Nos obtiene el entorno gr·fico (Gdk.GC) para el color c.
+		/// <summary>Nos obtiene el entorno gr√°fico (Gdk.GC) para el color c.
 		/// </summary>
 		/// <param name="c">El color.</param>
-		/// <returns>El entorno gr·fico para ese color.</returns>
+		/// <returns>El entorno gr√°fico para ese color.</returns>
 		
 		private Gdk.GC GetGC (EnuColor c)		
 		{
@@ -346,11 +346,11 @@ namespace simple2.interfaz.gtk
 		
 		/// <summary>Dibuja un texto en la superficie de dibujo.</summary>
 		/// <param name="c">El color del texto.</param>
-		/// <param name="x">La posiciÛn x del texto.</param>
-		/// <param name="y">La posiciÛn y del texto.</param>
+		/// <param name="x">La posici√≥n x del texto.</param>
+		/// <param name="y">La posici√≥n y del texto.</param>
 		/// <param name="texto">El texto a dibujar en la superficie de dibujo.
 		/// </param>
-		/// <param name="cent">Indica si el texto est· centrado (x e y se
+		/// <param name="cent">Indica si el texto est√° centrado (x e y se
 		/// refieren al centro del texto) o no (x e y se refieren a la 
 		/// esquina superior del texto)</param>
 		
@@ -397,15 +397,15 @@ namespace simple2.interfaz.gtk
 			}
 		}
 		
-		/// <summary>Dibuja los bordes de un rect·ngulo en la superficie
+		/// <summary>Dibuja los bordes de un rect√°ngulo en la superficie
 		/// de dibujo.</summary>
-		/// <param name="c">El color de las lÌneas del rect·ngulo.</param>
-		/// <param name="x1">La posiciÛn x de la esquina superior
-		/// izquierda del rect·ngulo.</param>
-		/// <param name="y1">La posiciÛn y de la esquina superior
-		/// izquierda del rect·ngulo.</param>
-		/// <param name="ancho">El ancho del rect·ngulo.</param>
-		/// <param name="alto">El alto del rect·ngulo.</param>
+		/// <param name="c">El color de las l√≠neas del rect√°ngulo.</param>
+		/// <param name="x1">La posici√≥n x de la esquina superior
+		/// izquierda del rect√°ngulo.</param>
+		/// <param name="y1">La posici√≥n y de la esquina superior
+		/// izquierda del rect√°ngulo.</param>
+		/// <param name="ancho">El ancho del rect√°ngulo.</param>
+		/// <param name="alto">El alto del rect√°ngulo.</param>
 		
 		public void DibujarRectangulo 
 			(EnuColor c,int x1, int y1, int ancho, int alto)

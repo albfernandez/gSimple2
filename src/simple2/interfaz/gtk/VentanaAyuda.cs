@@ -5,23 +5,23 @@ namespace simple2.interfaz.gtk
 	using System.Diagnostics;
 	
 	
-	/// <summary>Esta clase se encarga de mostrar la ayuda de la aplicaci髇.
+	/// <summary>Esta clase se encarga de mostrar la ayuda de la aplicaci贸n.
 	/// </summary>
 	
 	public class VentanaAyuda
 	{
-		/// <summary>趎ica instancia de la clase (patr髇 singleton).</summary>
+		/// <summary>脷nica instancia de la clase (patr贸n singleton).</summary>
 		
 		private static VentanaAyuda instancia = null;
 		
-		/// <summary>Constructor privado (patr髇 singleton).</summary>
+		/// <summary>Constructor privado (patr贸n singleton).</summary>
 		
 		private VentanaAyuda()
 		{
 		}
 		
-		/// <summary>Obtiene la 鷑ica instancia de la clase.
-		/// (patr髇 singleton).</summary>
+		/// <summary>Obtiene la 煤nica instancia de la clase.
+		/// (patr贸n singleton).</summary>
 		
 		public static VentanaAyuda GetInstance()
 		{
@@ -124,14 +124,14 @@ namespace simple2.interfaz.gtk
 		}		
 	}
 	
-	/// <summary>Excepci髇 cuando se produce un error al llamar a la ayuda.
+	/// <summary>Excepci贸n cuando se produce un error al llamar a la ayuda.
 	/// </summary>
 	
 	public class AyudaException : System.Exception
 	{
 	
 		/// <summary>Constructor de la clase.</summary>
-		/// <param name="mensaje">El mensaje de la excepci髇.</param>
+		/// <param name="mensaje">El mensaje de la excepci贸n.</param>
 		
 		public AyudaException (String mensaje):base (mensaje) {}
 	}

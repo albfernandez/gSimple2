@@ -1,8 +1,8 @@
 namespace simple2.representacionRuta
 {
 
-	/// <remarks>Esta clase representa un bus de cables. Sólo se
-	/// permite que un cable esté activo en un momento dado.</remarks>
+	/// <remarks>Esta clase representa un bus de cables. SÃ³lo se
+	/// permite que un cable estÃ© activo en un momento dado.</remarks>
 	
 	public class Bus
 	{
@@ -10,7 +10,7 @@ namespace simple2.representacionRuta
 		
 		private Cable[] cables = null;
 		
-		/// <summary>Cable activo en el bus (un número negativo es ninguno).
+		/// <summary>Cable activo en el bus (un nÃºmero negativo es ninguno).
 		/// </summary>
 		
 		private int cableActivo = -1;
@@ -24,8 +24,8 @@ namespace simple2.representacionRuta
 		}
 		
 		/// <summary>Enciende un cable del bus, apagando todos los 
-		/// demás.</summary>
-		/// <param name="linea">El número de cable a encender.</param>
+		/// demÃ¡s.</summary>
+		/// <param name="linea">El nÃºmero de cable a encender.</param>
 		
 		public void Encender (int linea)
 		{

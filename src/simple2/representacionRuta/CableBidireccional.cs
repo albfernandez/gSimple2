@@ -7,7 +7,7 @@ namespace simple2.representacionRuta
 	public class CableBidireccional: Cable
 	{
 		/// <summary>Crea una instancia de la clase.</summary>
-		/// <param name="dib">La superficie sobre la que se dibujar·
+		/// <param name="dib">La superficie sobre la que se dibujar√°
 		/// este objeto.</param>
 		/// <param name="puntos">Las coordenadas de las rectas que
 		/// componen este cable.</param>
@@ -17,7 +17,7 @@ namespace simple2.representacionRuta
 		{
 		}
 			
-		/// <summary>MÈtodo para dibujar el objeto en su estado
+		/// <summary>M√©todo para dibujar el objeto en su estado
 		/// inactivo.</summary>
 		
 		protected override void PintarInactivo ()
@@ -27,7 +27,7 @@ namespace simple2.representacionRuta
 			PintarFlechaInicio(COLOR_INACTIVO);
 		}
 		
-		/// <summary>MÈtodo para dibujar el objeto en su estado
+		/// <summary>M√©todo para dibujar el objeto en su estado
 		/// activo.</summary>
 		
 		protected override void PintarActivo ()

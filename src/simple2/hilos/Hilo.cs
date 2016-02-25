@@ -8,7 +8,7 @@ namespace simple2.hilos
 	
 	public class Hilo
 	{
-		/// <summary>Hilo de ejecuciÛn.</summary>
+		/// <summary>Hilo de ejecuci√≥n.</summary>
 
 		private Thread t = null;
 		
@@ -16,12 +16,12 @@ namespace simple2.hilos
 		
 		public Hilo ()
 		{
-			// Crea un nuevo hilo de ejecuciÛn con la funciÛn asociada
+			// Crea un nuevo hilo de ejecuci√≥n con la funci√≥n asociada
 			// a this.Run
 			t = new Thread (new ThreadStart (this.Run));
 		}
 		
-		/// <summary>Comienza la ejecuciÛn del hilo.</summary>
+		/// <summary>Comienza la ejecuci√≥n del hilo.</summary>
 		
 		public void Start ()
 		{
@@ -31,7 +31,7 @@ namespace simple2.hilos
 		/// <summary>Detiene un hilo durante los milisegundos inidicados.
 		/// </summary>
 		/// <param name="millisecondsTimeout">El tiempo en milisegundos que
-		/// dormir· el hilo que llame a este mÈtodo.</param>
+		/// dormir√° el hilo que llame a este m√©todo.</param>
 		/// <exception cref="System.ArgumentOutOfRangeException">Si el
 		/// argumento es negativo y distinto de Infinite.</exception>
 		
@@ -40,7 +40,7 @@ namespace simple2.hilos
 			Thread.Sleep(millisecondsTimeout);
 		}	
 		
-		/// <summary>Nos indica si el hilo est· activo.</summary>
+		/// <summary>Nos indica si el hilo est√° activo.</summary>
 		/// <returns><c>true</c> si el hilo se ha iniciado y 
 		/// no ha terminado, <c>false</c> en otro caso.</returns>
         
@@ -70,15 +70,15 @@ namespace simple2.hilos
 			return t.Join (millisecondsTimeout);
 		}
 		
-		/// <summary>CÛdigo que se ejecutar· cuando arranque el hilo.
-		/// Las subclases de esta deben sobreescribir este mÈtodo.
+		/// <summary>C√≥digo que se ejecutar√° cuando arranque el hilo.
+		/// Las subclases de esta deben sobreescribir este m√©todo.
 		/// </summary>
 		
 		public virtual void Run ()
 		{
 		}
 		
-		///<summary>Detiene la ejecuciÛn del hilo.</summary>
+		///<summary>Detiene la ejecuci√≥n del hilo.</summary>
 		
 		public virtual void Abort()
 		{

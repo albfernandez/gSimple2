@@ -33,7 +33,7 @@ namespace simple2.rutaDeDatos
 		}
 		
 		/// <summary>Comprueba si se produce un arrastre.</summary>
-		/// <param name="op">La operaci髇 a realizar.</param>
+		/// <param name="op">La operaci贸n a realizar.</param>
 		/// <param name="operandoA">El operando A.</param>
 		/// <param name="operandoB">El operando B.</param>
 		/// <returns><c>True</c> si se produce arrastre, <c>False</c> en
@@ -53,15 +53,15 @@ namespace simple2.rutaDeDatos
 			}
 		}
 		
-		/// <summary>Realiza una operaci髇 de la ALU. Tambi閚
+		/// <summary>Realiza una operaci贸n de la ALU. Tambi茅n
 		/// actualiza las salidas N, Z, C.</summary>
-		/// <param name="operacion">El entero con la operaci髇
+		/// <param name="operacion">El entero con la operaci贸n
 		/// a realizar.</param>
 		/// <param name="operacionSH">El entero indicando el desplazamiento
 		/// a realizar en SH.</param>
 		/// <param name="operandoA">El operando A.</param>
 		/// <param name="operandoB">El operando B.</param>
-		/// <returns>El resultado tras pasar por SH de la operaci髇.
+		/// <returns>El resultado tras pasar por SH de la operaci贸n.
 		/// </returns>
 		
 		public short Operar (int operacion, int operacionSH,
@@ -103,7 +103,7 @@ namespace simple2.rutaDeDatos
 		/// <summary>Realiza el desplazamiento de SH</summary>
 		/// <param name="op">El desplazamiento a realizar</param>
 		/// <param name="valor">El valor a desplazar</param>
-		/// <returns><c>valor</c> desplazado seg鷑 <c>op</c>.</returns>
+		/// <returns><c>valor</c> desplazado seg煤n <c>op</c>.</returns>
 		
 		private short OperarSH (int op, short valor)
 		{
@@ -119,9 +119,9 @@ namespace simple2.rutaDeDatos
 			return valor;
 		}
 		
-		/// <summary>Obtiene el resultado de la 鷏tima operaci髇 de la ALU.
+		/// <summary>Obtiene el resultado de la 煤ltima operaci贸n de la ALU.
 		/// </summary>
-		/// <returns>El resultado de la 鷏tima operaci髇 de la ALU.
+		/// <returns>El resultado de la 煤ltima operaci贸n de la ALU.
 		/// </returns>
 		
 		public short LeerResultado ()
@@ -129,9 +129,9 @@ namespace simple2.rutaDeDatos
 			return resultado;
 		}
 		
-		/// <summary>Obtiene el valor de C tras la 鷏tima 
-		/// operaci髇 de la ALU.</summary>
-		/// <returns>El valor de C tras la 鷏tima operaci髇 de la ALU.
+		/// <summary>Obtiene el valor de C tras la 煤ltima 
+		/// operaci贸n de la ALU.</summary>
+		/// <returns>El valor de C tras la 煤ltima operaci贸n de la ALU.
 		/// </returns>
 		
 		public int LeerC ()
@@ -139,9 +139,9 @@ namespace simple2.rutaDeDatos
 			return c;
 		}
 		
-		/// <summary>Obtiene el valor de N tras la 鷏tima op
-		/// eraci髇 de la ALU.</summary>
-		/// <returns>El valor de N tras la 鷏tima operaci髇 de la ALU.
+		/// <summary>Obtiene el valor de N tras la 煤ltima op
+		/// eraci贸n de la ALU.</summary>
+		/// <returns>El valor de N tras la 煤ltima operaci贸n de la ALU.
 		/// </returns>
 		
 		public int LeerN ()
@@ -149,9 +149,9 @@ namespace simple2.rutaDeDatos
 			return n;
 		}
 		
-		/// <summary>Obtiene el valor de Z tras la 鷏tima 
-		/// operaci髇 de la ALU.</summary>
-		/// <returns>El valor de Z tras la 鷏tima operaci髇 de la ALU.
+		/// <summary>Obtiene el valor de Z tras la 煤ltima 
+		/// operaci贸n de la ALU.</summary>
+		/// <returns>El valor de Z tras la 煤ltima operaci贸n de la ALU.
 		/// </returns>
 		
 		public int LeerZ ()

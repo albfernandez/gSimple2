@@ -10,7 +10,7 @@ namespace simple2.utilidades
 	public class Desensamblador
 	{
 	
-		/// <summary>Tabla donde se guardan los nem髇icos correspondientes a
+		/// <summary>Tabla donde se guardan los nem贸nicos correspondientes a
 		/// cada opcode.</summary>
 		
 		private static Hashtable hash = null;
@@ -20,11 +20,11 @@ namespace simple2.utilidades
 		
 		private Desensamblador(){}
 		
-		/// <summary>Obtiene la la cadena de la instrucci髇 codificada.
+		/// <summary>Obtiene la la cadena de la instrucci贸n codificada.
 		/// </summary>
-		/// <param name="inst">La instrucci髇 codificada a desensamblar.
+		/// <param name="inst">La instrucci贸n codificada a desensamblar.
 		/// </param>
-		/// <returns>La instrucci髇 desensamblada.</returns>
+		/// <returns>La instrucci贸n desensamblada.</returns>
 		
 		public static String Desensamblar (short inst)
 		{
@@ -49,7 +49,7 @@ namespace simple2.utilidades
 			}
 		}
 		
-		/// <summary>Crea la tabla con los opcodes y nem髇icos de 
+		/// <summary>Crea la tabla con los opcodes y nem贸nicos de 
 		/// las instrucciones. </summary>
 		
 		private static Hashtable CrearHash()

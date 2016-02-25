@@ -3,17 +3,17 @@ namespace simple2.representacionRuta
 	using System;
 
 
-	/// <remarks>Esta clase representa un dibujo de un rect醤gulo con
+	/// <remarks>Esta clase representa un dibujo de un rect谩ngulo con
 	/// un texto centrado en su interior.</remarks>
 
 	public class CajaRegistro: ElementoDibujable
 	{
-		/// <summary>Posici髇 x de la esquina superior izquierda de la caja.
+		/// <summary>Posici贸n x de la esquina superior izquierda de la caja.
 		/// </summary>
 		
 		private int x;
 		
-		/// <summary>Posici髇 y de la esquina superior izquierda de la caja.
+		/// <summary>Posici贸n y de la esquina superior izquierda de la caja.
 		/// </summary>
 		
 		private int y;
@@ -34,9 +34,9 @@ namespace simple2.representacionRuta
 		/// El ancho y el alto son valores por defecto</summary>
 		/// <param name="dib">La superficie sobre la que se debe dibujar
 		///  este objeto.</param>
-		/// <param name="x">Posici髇 x de la esquina superior izquierda
+		/// <param name="x">Posici贸n x de la esquina superior izquierda
 		/// de la caja.</param>
-		/// <param name="y">Posici髇 y de la esquina superior izquierda 
+		/// <param name="y">Posici贸n y de la esquina superior izquierda 
 		/// de la caja.</param>
 		/// <param name="texto">Texto a mostrar dentro de la caja.</param>
 		
@@ -47,9 +47,9 @@ namespace simple2.representacionRuta
 		/// <summary>Crea una instancia de la clase.</summary>
 		/// <param name="dib">La superficie sobre la que se debe dibujar 
 		/// este objeto.</param>
-		/// <param name="x">Posici髇 x de la esquina superior izquierda
+		/// <param name="x">Posici贸n x de la esquina superior izquierda
 		/// de la caja.</param>
-		/// <param name="y">Posici髇 y de la esquina superior izquierda 
+		/// <param name="y">Posici贸n y de la esquina superior izquierda 
 		/// de la caja.</param>
 		/// <param name="texto">Texto a mostrar dentro de la caja.</param>
 		/// <param name="ancho">El ancho de la caja de texto.</param>
@@ -69,7 +69,7 @@ namespace simple2.representacionRuta
 			this.texto = texto;
 		}
 	
-		/// <summary>M閠odo para dibujar el objeto en su estado
+		/// <summary>M茅todo para dibujar el objeto en su estado
 		/// inactivo.</summary>
 		
 		protected override void PintarInactivo()
@@ -84,7 +84,7 @@ namespace simple2.representacionRuta
 				true );
 		}
 		
-		/// <summary>M閠odo para dibujar el objeto en su estado
+		/// <summary>M茅todo para dibujar el objeto en su estado
 		/// activo.</summary>
 		
 		protected override void PintarActivo ()

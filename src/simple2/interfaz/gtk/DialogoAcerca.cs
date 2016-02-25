@@ -5,17 +5,17 @@ namespace simple2.interfaz.gtk
 	using System;
 	using System.Reflection;
 
-	/// <remarks>Esta clase es un diálogo en el que se muestra información
+	/// <remarks>Esta clase es un diÃ¡logo en el que se muestra informaciÃ³n
 	/// acerca del programa y sus autores.</remarks>
 
 	public class DialogoAcerca : Gtk.Dialog
 	{
-		/// <summary>Almacen la instancia de esta clase (patrón
+		/// <summary>Almacen la instancia de esta clase (patrÃ³n
 		/// singleton).</summary>
 		
 		private static DialogoAcerca instancia = null;
 		
-		/// <summary>Obtiene la instancia de esta clase (patrón
+		/// <summary>Obtiene la instancia de esta clase (patrÃ³n
 		/// singleton).</summary>
 		/// <returns>La instancia de esta clase.</returns>
 		
@@ -28,7 +28,7 @@ namespace simple2.interfaz.gtk
 		}
 		
 		/// <summary>Crea una instancia de la clase.</summary>
-		/// <param name="parent">La ventana padre de este diálogo.
+		/// <param name="parent">La ventana padre de este diÃ¡logo.
 		/// </param>
 
 		private DialogoAcerca (Gtk.Window parent):
@@ -57,10 +57,8 @@ namespace simple2.interfaz.gtk
 			vbox.PackStart (new Gtk.Label (" "));
 			vbox.PackStart (new Gtk.Label  (
 					Ventana.GetText ("DialogoAcerca_Autores")));
-			vbox.PackStart (new Gtk.Label ("Montserrat Sotomayor González " +
-					"<msotomayorgonzalez@yahoo.es>"));
-			vbox.PackStart (new Gtk.Label ("Alberto Fernández Martínez " +
-					"<infjaf@yahoo.es>"));
+			vbox.PackStart (new Gtk.Label ("Montserrat Sotomayor GonzÃ¡lez"));
+			vbox.PackStart (new Gtk.Label ("Alberto FernÃ¡ndez MartÃ­nez"));
 					
 			vbox.PackStart (
 				new Gtk.Image (IconManager.GetPixmap ("acerca.png")));
@@ -74,8 +72,8 @@ namespace simple2.interfaz.gtk
 
 		}
 
-		/// <summary>Función que se ejecuta al pulsar sobre el diálogo, 
-		/// ocultándolo.</summary>
+		/// <summary>FunciÃ³n que se ejecuta al pulsar sobre el diÃ¡logo, 
+		/// ocultÃ¡ndolo.</summary>
 		/// <param name="o"></param>
 		/// <param name="args"></param>
 
@@ -84,7 +82,7 @@ namespace simple2.interfaz.gtk
 			Hide ();
 		}
 
-		/// <summary>Función que muestra el diálogo centrado en la ventana
+		/// <summary>FunciÃ³n que muestra el diÃ¡logo centrado en la ventana
 		/// padre.</summary>
 
 		public new void ShowAll ()

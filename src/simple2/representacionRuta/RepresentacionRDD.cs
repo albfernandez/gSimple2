@@ -7,14 +7,14 @@ namespace simple2.representacionRuta
 
 	
 	/// <remarks>Esta clase se encarga de agrupar los elementos
-	/// gr醘icos que componen el simulador visual de la ruta de datos.
-	/// Se encarga de ir activando y desactivando los elementos seg鷑
-	/// las se馻les que recibe del simulador de la ruta de datos.</remarks>
+	/// gr谩ficos que componen el simulador visual de la ruta de datos.
+	/// Se encarga de ir activando y desactivando los elementos seg煤n
+	/// las se帽ales que recibe del simulador de la ruta de datos.</remarks>
 	
 	public class RepresentacionRDD : 
 		RegisterChangeListener, IRepresentacionRDD
 	{
-		/// <summary>Superficie de dibujo, sobre la que se pintar醤
+		/// <summary>Superficie de dibujo, sobre la que se pintar谩n
 		/// todos los objetos.</summary>
 		
 		private InterfaceDibujo dibujo;
@@ -91,12 +91,12 @@ namespace simple2.representacionRuta
 		
 		private IElementoDibujable cable_l1 = null;
 		
-		/// <summary>Cable A0 de MUX para selecci髇 de entrada 
+		/// <summary>Cable A0 de MUX para selecci贸n de entrada 
 		/// de la ALU.</summary>		
 		
 		private IElementoDibujable cable_a0 = null;
 		
-		/// <summary>Entradas de control F3-F0 de operaci髇 de la ALU.
+		/// <summary>Entradas de control F3-F0 de operaci贸n de la ALU.
 		/// </summary>
 		
 		private IElementoDibujable cable_f3_f0 = null;
@@ -113,7 +113,7 @@ namespace simple2.representacionRuta
 		
 		private IElementoDibujable cable_z = null;
 		
-		/// <summary>Cable S2-S0 para indicar la operaci髇 del registro
+		/// <summary>Cable S2-S0 para indicar la operaci贸n del registro
 		/// SH.</summary>
 		
 		private IElementoDibujable cable_s2_s0 = null;
@@ -155,7 +155,7 @@ namespace simple2.representacionRuta
 		
 		private IElementoDibujable cable_sh_mbr = null;
 		
-		/// <summary>Cable que va del registroSH a la intersecci髇
+		/// <summary>Cable que va del registroSH a la intersecci贸n
 		/// del cable con BusC.</summary>
 		
 		private IElementoDibujable cable_sh = null;
@@ -196,7 +196,7 @@ namespace simple2.representacionRuta
 		
 		private IElementoDibujable et_a0 = null;	
 
-		/// <summary>Etiqueta F3-F0 de selecci髇 de operaci髇 de la ALU.
+		/// <summary>Etiqueta F3-F0 de selecci贸n de operaci贸n de la ALU.
 		/// </summary>
 
 		private IElementoDibujable et_f0 = null;
@@ -230,18 +230,18 @@ namespace simple2.representacionRuta
 		
 		private IElementoDibujable etiqueta_ciclos = null;
 		
-		/// <summary>Etiqueta para mostrar la microinstrucci髇 que hay
+		/// <summary>Etiqueta para mostrar la microinstrucci贸n que hay
 		/// actualmente en rmc.</summary>
 		
 		private IElementoDibujable etiqueta_rmc = null;
 		
-		/// <summary>Etiqueta para mostrar la instrucci髇 en ejecuci髇.
+		/// <summary>Etiqueta para mostrar la instrucci贸n en ejecuci贸n.
 		/// </summary>
 		
 		private IElementoDibujable etiqueta_inst = null;
 		
 		/// <summary>Crea una instancia de la clase.</summary>
-		/// <param name="dibujo">Superficie sobre la que se dibujar醤 los
+		/// <param name="dibujo">Superficie sobre la que se dibujar谩n los
 		/// objetos del simulador.</param>
 		
 		public RepresentacionRDD (InterfaceDibujo dibujo)
@@ -517,10 +517,10 @@ namespace simple2.representacionRuta
 		
 		/// <summary>Activa los elementos activos durante el subciclo 1.
 		/// </summary>
-		/// <param name="mic">La microinstrucci髇 que se
+		/// <param name="mic">La microinstrucci贸n que se
 		/// acaba de cargar.</param>
-		/// <param name="rdc>La direcci髇 de la memoria de control en la que
-		/// se encuentra la microinstrucci髇.</param>
+		/// <param name="rdc>La direcci贸n de la memoria de control en la que
+		/// se encuentra la microinstrucci贸n.</param>
 		
 		public void DibujarCiclo1 (MicroInstruccion mic, short rdc)
 		{
@@ -537,13 +537,13 @@ namespace simple2.representacionRuta
 			
 			if ((rdc == 0) || ((rdc >=1020) && (rdc < 1023)))
 			{
-				etiqueta_inst.SetText ("Cargando sig. instrucci髇...");
+				etiqueta_inst.SetText ("Cargando sig. instrucci贸n...");
 			}
 			ActualizarTodo();
 		}
 		/// <summary>Activa los elementos activos durante el subciclo 2.
 		/// </summary>
-		/// <param name="mic">La microinstrucci髇 actualmente en ejecuci髇.
+		/// <param name="mic">La microinstrucci贸n actualmente en ejecuci贸n.
 		/// Nos indica los registros de origen.</param>
 		/// <param name="regA">El contenido de BufferA.</param>
 		/// <param name="regB">El contenido de BufferB.</param>
@@ -571,7 +571,7 @@ namespace simple2.representacionRuta
 		
 		/// <summary>Activa los elementos activos durante el subciclo 3.
 		/// </summary>
-		/// <param name="mic">La microinstrucci髇 en ejecuci髇.</param>
+		/// <param name="mic">La microinstrucci贸n en ejecuci贸n.</param>
 		/// <param name="vSH">El valor del registro SH.</param>
 		/// <param name="vMAR">El valor del registro MAR.</param>
 		/// <param name="vMBR">El valor del registro MBR.</param>
@@ -631,7 +631,7 @@ namespace simple2.representacionRuta
 		
 		/// <summary>Activa los elementos activos durante el subciclo 4.
 		/// </summary>
-		/// <param name="mic">La microinstrucci髇 en ejecuci髇.</param>
+		/// <param name="mic">La microinstrucci贸n en ejecuci贸n.</param>
 		/// <param name="vMBR">El valor del registro MBR.</param>S
 		
 		public void DibujarCiclo4(MicroInstruccion mic, short vMBR)
@@ -750,7 +750,7 @@ namespace simple2.representacionRuta
 			}
 		}
 		
-		/// <summary>Se llama para inicializar el listener, pas醤dole un
+		/// <summary>Se llama para inicializar el listener, pas谩ndole un
 		/// array con el contenido de todos los registros.</summary>
 		/// <param name="newValues">Los valores almacenados en los registros.
 		/// </param>
@@ -764,7 +764,7 @@ namespace simple2.representacionRuta
 		}	
 		
 		/// <summary>Establece el texto de etiqueta_rmc con el contenido
-		/// de la microinstrucci髇 que se le pasa como par醡etro.
+		/// de la microinstrucci贸n que se le pasa como par谩metro.
 		/// </summary>
 		/// <param name="mic">La microinstruccion a escribir.</param>
 
