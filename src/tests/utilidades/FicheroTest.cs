@@ -20,7 +20,7 @@ namespace utilidades
 		[Test]
 		public void TestAcentos()
 		{
-			String textoInicial = "Hola mundo\n Con acÈntÛs y Òs y cosas }[][Á«*==)(=";
+			String textoInicial = "Hola mundo\n Con ac√©nt√≥s y √±s y cosas }[][√ß√á*==)(=";
 			String leido= null;
 			Fichero.GuardarTexto("fichero", textoInicial);
 			leido = Fichero.CargarTexto ("fichero");
