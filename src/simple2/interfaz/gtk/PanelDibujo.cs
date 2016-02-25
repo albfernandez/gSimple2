@@ -115,7 +115,7 @@ namespace simple2.interfaz.gtk
 		{
 			lock (this)
 			{
-				window = args.Event.Window;
+				this.window = args.Event.Window;
 				Refresh();			
 				SignalArgs sa = (SignalArgs) args;
 				sa.RetVal = false;
