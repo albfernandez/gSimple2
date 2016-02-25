@@ -28,7 +28,7 @@ namespace simple2.interfaz.gtk
 		/// <summary>El espacio de pantalla sobre el que se dibujará.
 		/// </summary>
 		
-		private Gdk.Window window;
+		private Gdk.Drawable window;
 		
 		/// <summary>Almacena el ancho del lienzo.</summary>
 				
@@ -92,7 +92,7 @@ namespace simple2.interfaz.gtk
 			rdd = new RepresentacionRDD (this);
 			ExposeEvent += new ExposeEventHandler (OnExposeEvent);
 			ConfigureEvent += new ConfigureEventHandler (OnConfigureEvent);
-			this.layout = new Pango.Layout(this.PangoContext);			
+			this.layout = new Pango.Layout(this.PangoContext);
 		}
 		
 		/// <summary>Establece el objeto RepresentacionRDD que dibujará
@@ -115,6 +115,7 @@ namespace simple2.interfaz.gtk
 		{
 			lock (this)
 			{
+				window = args.Event.Window;
 				Refresh();			
 				SignalArgs sa = (SignalArgs) args;
 				sa.RetVal = false;
@@ -148,7 +149,7 @@ namespace simple2.interfaz.gtk
 			{
 				// TODO ver de donde sacamos window ahora
 				Gdk.EventConfigure ev = args.Event;
-
+				this.window = ev.Window;
 
 				pixmap = new Pixmap (window, ev.Width, ev.Height, -1);
 				_ancho = ev.Width;
@@ -305,6 +306,7 @@ namespace simple2.interfaz.gtk
 			}
 		}
 		
+
 		/// <summary>Redibuja la superficie de dibujo.</summary>
 		
 		public void Refresh ()
