@@ -81,15 +81,20 @@ namespace simple2.interfaz.gtk
 			else
 			{
 				String[] browsers = new String[]{ 
+					"/usr/bin/iceweasel",
+					"/usr/bin/firefox",
+					"/usr/bin/chromium",
+					"/usr/bin/google-chrome",					
 					"/usr/bin/opera",
 					"/usr/bin/mozilla", 
 					"/usr/bin/galeon", 
-					"/usr/bin/konqueror"
+					"/usr/bin/konqueror",
 				};
 				for (int i=0; (i < browsers.Length) ; i++)
 				{
-					if (System.IO.File.Exists (browsers[i]))
+					if (System.IO.File.Exists (browsers[i])) {
 						return browsers[i];
+					}
 				}
 				throw new AyudaException (Ventana.GetText("VAyuda_NoBrowser"));
 			}
