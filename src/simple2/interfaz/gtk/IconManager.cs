@@ -1,7 +1,6 @@
 namespace simple2.interfaz.gtk
 {
 	using Gdk;
-	using System.Resources;
 	using System;
 	using System.Reflection;
 
@@ -12,10 +11,6 @@ namespace simple2.interfaz.gtk
 	
 	public class IconManager
 	{
-		/// <summary>ResourceManager encargado de cargar los recursos de
-		/// imágenes.</summary>
-		
-		private static ResourceManager resPixmaps = null;
 		
 		/// <summary>Constructor privado: No se permite crear instancias
 		/// de esta clase.</summary>		
