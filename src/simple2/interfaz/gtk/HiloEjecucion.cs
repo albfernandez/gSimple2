@@ -51,21 +51,23 @@
 						acumulado += paso;
 						if (acumulado >= tSubciclo)
 						{
-							acumulado=0;
-							mic.EjecutarSubciclo();
+							acumulado=0;							
+    						Gtk.Application.Invoke(delegate {
+								try {
+									mic.EjecutarSubciclo();
+								}
+								catch (SimulacionFinalizadaException) {
+									terminar = true;
+								}
+							});
 						}
 					}
 				}
-				mic.Detener();
-			}
-			catch (SimulacionFinalizadaException)
-			{
-				mic.Detener();
-				return;
+				Gtk.Application.Invoke(delegate { mic.Detener(); });
 			}
 			catch (System.Threading.ThreadAbortException)
 			{
-				mic.Detener();
+				Gtk.Application.Invoke(delegate {mic.Detener(); });
 				return;
 			}
 		}
