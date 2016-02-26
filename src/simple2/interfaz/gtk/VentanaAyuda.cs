@@ -36,10 +36,8 @@ namespace simple2.interfaz.gtk
 		
 		public void ShowAll ()
 		{			
-			bool error = false;
-			String mensaje = "";
 			try{
-				Process p = Process.Start (GetBrowser(), "\""+GetParam()+"\"");
+				Process.Start (GetBrowser(), "\""+GetParam()+"\"");
 			}
 			catch (AyudaException ae)
 			{
@@ -52,7 +50,7 @@ namespace simple2.interfaz.gtk
 							Ventana.GetText ("VAyuda_Error"), 
 							ae.Message)
 				);
-				int respuesta = m.Run ();
+				m.Run ();
 				m.Hide ();
 			}
 			catch (Exception e)
