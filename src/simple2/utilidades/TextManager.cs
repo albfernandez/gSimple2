@@ -33,14 +33,12 @@ namespace simple2.utilidades
 			try
 			{
 				String lang = TextManager.GetLanguage();
-				
-				String recurso = "Mensajes." + lang;
+				String recurso = "Mensajes_" + lang ;
 
 				try
 				{
-					resManDefecto =
-						new	ResourceManager ("Mensajes." + lengDefecto + ".txt",
-								 typeof(TextManager).Assembly);
+					resManDefecto =	new	ResourceManager ("Mensajes_" + lengDefecto , typeof(TextManager).Assembly);
+					resManDefecto.GetString ("Programa_Lenguaje");
 				}
 				catch (Exception ex)
 				{
@@ -49,26 +47,12 @@ namespace simple2.utilidades
 
 				try
 				{
-					resMan = new ResourceManager (recurso,
-								      typeof(TextManager).Assembly);
+					resMan = new ResourceManager (recurso, typeof(TextManager).Assembly);
 					resMan.GetString ("Programa_Lenguaje");
 				}
 				catch (Exception ex1)
-				{
-
-					try
-					{
-						if (lang.Length > 2)
-							recurso = "Mensajes." +	lang.Substring (0, 2) + ".txt";
-						resMan = new ResourceManager (recurso,
-							 typeof(TextManager).Assembly);
-						resMan.GetString ("Programa_Lenguaje");
-
-					}
-					catch (Exception ex2)
-					{
-						resMan = resManDefecto;
-					}
+				{			
+					resMan = resManDefecto;					
 				}
 			}
 			catch (Exception ex)
@@ -82,8 +66,9 @@ namespace simple2.utilidades
 		
 		public static TextManager GetInstance()
 		{
-			if (instancia == null)
+			if (instancia == null) {
 				instancia = new TextManager();
+			}
 			return instancia;
 		}
 		
@@ -135,15 +120,19 @@ namespace simple2.utilidades
 		
 		private static String GetLanguage ()
 		{
-			String lang =
-				System.Environment.GetEnvironmentVariable ("LANG");
-			String language =
-				System.Environment.GetEnvironmentVariable ("LANGUAGE");
+			String lang = System.Environment.GetEnvironmentVariable ("LANG");
+			String language = System.Environment.GetEnvironmentVariable ("LANGUAGE");
 
-			if (language == null)
+			if (language == null) {
 				language = lang;
-			if ( (language == null) || (language.Length < 2) )
+			}
+			if ( (language == null) || (language.Length < 2) ) {
 				language = lengDefecto;
+			}
+
+			if (language.Length > 2) {
+				return language.Substring(0,2);
+			}
 
 			return language;
 		}		
