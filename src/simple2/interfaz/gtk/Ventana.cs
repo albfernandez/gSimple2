@@ -19,17 +19,19 @@ namespace simple2.interfaz.gtk
 
 	public class Ventana : Gtk.Window
 	{
+
+		private bool pausaActiva = false;
 		///<summary>Botón para detener la simulación.</summary>
 		
-		private static Gtk.Button btnDetener = null;
+		private static Gtk.ToolButton btnDetener = null;
 		
 		/// <summary>Botón para compilar y comenzar la simulación.</summary>
 		
-		private static Gtk.Button btnEjecutar = null;
+		private static Gtk.ToolButton btnEjecutar = null;
 		
 		/// <summary>Botón para pausar la simulación.</summary>
 		
-		private static Gtk.ToggleButton btnPausar = null;
+		private static Gtk.ToolButton btnPausar = null;
 		
 		/// <summary>Menuitem para compilar y comenzar la simulación.
 		/// </summary>
@@ -346,47 +348,59 @@ namespace simple2.interfaz.gtk
 			Gtk.Toolbar barra = new Gtk.Toolbar ();
 			barra.ToolbarStyle = ToolbarStyle.Icons;
 
-			Gtk.Button btn = null;
-			btn = (Gtk.Button) barra.InsertStock (
-						Gtk.Stock.New,
-						GetText("Ventana_ToolTip_Nuevo"),
-						String.Empty,
-						new Gtk.SignalFunc (VentanaNada),
-						IntPtr.Zero,
-						-1);
+			Gtk.ToolButton btn = null;
+			btn = new Gtk.ToolButton(Gtk.Stock.New);
 			btn.Clicked += new EventHandler (VentanaNuevo);
-
-			btn = (Gtk.Button) barra.InsertStock (
-						Gtk.Stock.Open,
-						GetText("Ventana_ToolTip_Abrir"),
-						String.Empty,
-						new Gtk.SignalFunc (VentanaNada),
-						IntPtr.Zero,
-						-1);
+			barra.Insert(btn, -1);
+			
+			btn = new Gtk.ToolButton(Gtk.Stock.Open);
 			btn.Clicked += new EventHandler (VentanaAbrir);
+			barra.Insert(btn, -1);
+
+			btn = new Gtk.ToolButton(Gtk.Stock.Save);
+			btn.Clicked += new EventHandler (VentanaGuardar);
+			barra.Insert(btn, -1);
+
+			barra.Insert(new Gtk.SeparatorToolItem(), -1);
+		
+			btnEjecutar = new Gtk.ToolButton(new Gtk.Image (IconManager.GetPixmap("run32.png")), GetText ("Ventana_Ejecutar"));
+			btnEjecutar.Clicked += new EventHandler (VentanaEjecutar);
+			barra.Insert(btnEjecutar, -1);
+			btnEjecutar.Sensitive = true;
+
+			btnPausar = new Gtk.ToolButton(new Gtk.Image(IconManager.GetPixmap("pausar32.png")), GetText("Ventana_ToolTip_Pausar"));
+			btnPausar.Clicked += new EventHandler (VentanaPausar);
+			btnPausar.Sensitive = false;
+			barra.Insert(btnPausar, -1);
+
+			btnDetener = new Gtk.ToolButton(Gtk.Stock.Stop);
+			btnDetener.Clicked += new EventHandler (VentanaDetener);
+			btnDetener.Sensitive=false;
+			barra.Insert(btnDetener, -1);
+
+			barra.Insert(new Gtk.SeparatorToolItem(), -1);
+
+			btn = new Gtk.ToolButton(Gtk.Stock.Quit);
+			btn.Clicked += new EventHandler (VentanaSalir);
+			barra.Insert(btn, -1);
+/*
+
+
 		
 
-			btn = (Gtk.Button) (barra.InsertStock (
-						Gtk.Stock.Save,
-						GetText
-						("Ventana_ToolTip_Guardar"),
-						String.Empty,
-						new Gtk.SignalFunc (VentanaNada),
-						IntPtr.Zero,
-						-1));
-			btn.Clicked += new EventHandler (VentanaGuardar);
+
 
 			barra.AppendSpace ();
 
 			btnEjecutar = (Gtk.Button) barra.AppendItem( 
-						GetText ("Ventana_Ejecutar"), 
+						, 
 						GetText("Ventana_ToolTip_Ejecutar"), 
 						String.Empty,
-						new Gtk.Image (IconManager.GetPixmap("run32.png")), 
+						, 
 						new Gtk.SignalFunc (VentanaNada));
-			btnEjecutar.Clicked += new EventHandler (VentanaEjecutar);
+			btnEjecutar.Clicked += new EventHandler ();
 			
-			btnEjecutar.Sensitive = true;
+
 
 
 			//--
@@ -413,15 +427,7 @@ namespace simple2.interfaz.gtk
 			//--
 
 			barra.AppendSpace ();
-
-			btn = (Gtk.Button) barra.InsertStock (
-							Gtk.Stock.Quit,
-							GetText("Ventana_ToolTip_Salir"),
-							String.Empty,
-							new Gtk.SignalFunc(VentanaNada),
-							IntPtr.Zero,
-							-1);
-			btn.Clicked += new EventHandler (VentanaSalir);
+*/
 
 			return barra;
 		}
@@ -995,9 +1001,9 @@ namespace simple2.interfaz.gtk
 			
 			if (hiloEjecucion != null)
 			{
-				if (btnPausar.Active == hiloEjecucion.GetPausado())
+				if (pausaActiva == hiloEjecucion.GetPausado())
 				{
-					btnPausar.Active = !btnPausar.Active;
+					pausaActiva = !pausaActiva;
 				}
 				else
 				{
@@ -1128,7 +1134,7 @@ namespace simple2.interfaz.gtk
 			{
 				hiloEjecucion.Abort();
 			}
-			btnPausar.Active = false;
+			pausaActiva = false;
 		}
 		
 		/// <remarks>Esta clase se encarga de activar y desactivar los 
