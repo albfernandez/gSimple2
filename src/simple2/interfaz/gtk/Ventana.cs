@@ -916,7 +916,7 @@ namespace simple2.interfaz.gtk
 			{
 				texto = Fichero.CargarTexto (selectorAbrir.Filename);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				selectorAbrir.Hide ();
 

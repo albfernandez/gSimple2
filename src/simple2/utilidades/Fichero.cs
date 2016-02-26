@@ -32,11 +32,10 @@ namespace simple2.utilidades
 				return texto;
 
 			}
-			catch (ArgumentException ex)
+			catch (ArgumentException)
 			{
 
-				TextReader file = new StreamReader (
-									archivo, System.Text.Encoding.Default);
+				TextReader file = new StreamReader (archivo, System.Text.Encoding.Default);
 				String texto = file.ReadToEnd ();
 				file.Close ();
 				return texto;

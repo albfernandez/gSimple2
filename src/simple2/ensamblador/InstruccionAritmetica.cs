@@ -57,7 +57,7 @@ namespace simple2.ensamblador
 			{
 				numero = Int32.Parse (op[1]);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				throw new ErrorCodigoException
 					(TextManager.GetText ("Ens_err_parm1_numero"));

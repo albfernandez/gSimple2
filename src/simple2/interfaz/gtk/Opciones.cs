@@ -80,7 +80,7 @@ namespace simple2.interfaz.gtk
 				IFormatter formatter = new BinaryFormatter ();
 				op = (Opciones) formatter.Deserialize (file);
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 				return new Opciones();
 			}
@@ -113,7 +113,7 @@ namespace simple2.interfaz.gtk
 					IFormatter formatter = new BinaryFormatter ();
 					formatter.Serialize (file, this);
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
 				}
 				file.Close ();			

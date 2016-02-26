@@ -53,7 +53,7 @@ namespace simple2.interfaz.gtk
 				m.Run ();
 				m.Hide ();
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 			}			
 		}

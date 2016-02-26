@@ -322,7 +322,7 @@ namespace simple2.interfaz.gtk
 				{	MemoriaControl.CreateFromString (
 					Fichero.CargarTexto (lblMemoriaAlt.Text));
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
 					Hilo.Sleep(250);
 					MessageDialog m2 =

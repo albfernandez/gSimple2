@@ -60,11 +60,11 @@ namespace simple2.ensamblador
 						(TextManager.GetText("Ens_err_parame_fr"));
 				}
 			}
-			catch (ErrorCodigoException ex)
+			catch (ErrorCodigoException)
 			{
 				throw;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				//Entonces es que usamos una etiqueta
 				//Comprobamos que la etiqueta sea correcta.
@@ -97,7 +97,7 @@ namespace simple2.ensamblador
 			{
 				direccion = Int32.Parse (inst[1]);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				direccion =	((Pos_etiqueta)
 					 etiquetasDeclaradas[inst[1]]).linea_salida;

@@ -40,7 +40,7 @@ namespace simple2.utilidades
 					resManDefecto =	new	ResourceManager ("Mensajes_" + lengDefecto , typeof(TextManager).Assembly);
 					resManDefecto.GetString ("Programa_Lenguaje");
 				}
-				catch (Exception ex)
+				catch (Exception)
 				{
 					//No tenemos el idioma por defecto.
 				}
@@ -50,12 +50,12 @@ namespace simple2.utilidades
 					resMan = new ResourceManager (recurso, typeof(TextManager).Assembly);
 					resMan.GetString ("Programa_Lenguaje");
 				}
-				catch (Exception ex1)
+				catch (Exception)
 				{			
 					resMan = resManDefecto;					
 				}
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 			}
 		}
@@ -99,20 +99,20 @@ namespace simple2.utilidades
 		{
 			try
 			{
-				return (resMan.GetString (clave));
+				return resMan.GetString (clave);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 			}
 			try
 			{
-				return (resManDefecto.GetString (clave));
+				return resManDefecto.GetString (clave);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 			}
 
-			return (clave);
+			return clave;
 		}
 		
 		/// <summary>Obtiene el lenguaje del sistema.</summary>
