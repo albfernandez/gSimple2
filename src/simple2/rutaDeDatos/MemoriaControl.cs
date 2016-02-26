@@ -177,8 +177,6 @@ namespace simple2.rutaDeDatos
 			{
 				try
 				{
-					if ( v0[i] == "" )
-						continue;
 	
 					String linea = (String) v0[i];
 					
