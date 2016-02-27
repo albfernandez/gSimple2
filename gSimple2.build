@@ -12,14 +12,18 @@
 		<delete dir="${build.output.dir}" />
     </target>
 
-    <target name="build">
+	<target name="prepare">
 		<mkdir dir="${build.output.dir}" /> 
+	</target>
+	<target name="build-resources" depends="prepare">
 		<resgen todir="${build.output.dir}">
 			<resources>
 				<include name="src/languages/*.txt"/>
 			</resources>
 		</resgen>
-			
+	</target>
+
+    <target name="build" depends="prepare,build-resources">			
 		<csc target="exe" output="${build.output.dir}/gSimple2.exe" codepage="${codepage}" debug="${debug}">
 			<sources>
 				<include name="src/simple2/**.cs" />
@@ -33,8 +37,34 @@
 				<package name="glib-sharp-2.0" />
 			</pkg-references>
 			<nowarn>
-				<warning number="0162,0169,0168,0219,0414,0649,0114,0105,0618,0612"></warning>
+				<warning number="0612"></warning>
 			 </nowarn>
 		</csc>
+	</target>
+	<target name="build-tests" depends="build">
+		<csc target="library" output="${build.output.dir}/gSimple2.Tests.dll" codepage="${codepage}" debug="${debug}">
+			<sources>
+				<include name="src/tests/**.cs"/>
+			</sources>
+			<pkg-references>
+				<package name="gtk-sharp-2.0"/>
+				<package name="glib-sharp-2.0" />
+				<package name="nunit"/>
+			</pkg-references>
+			<references>
+				<include name="${build.output.dir}/gSimple2.exe" />
+			</references>
+		</csc>	
+	</target>
+	<target name="test" depends="prepare,build,build-tests">
+		<nunit2 verbose="true" haltonfailure="false" failonerror="true">
+			<formatter type="Plain" usefile="false" />
+			<test haltonfailure="false">
+				      <assemblies>
+						<include name="${build.output.dir}\*Tests.dll" />
+					</assemblies>
+
+			</test>
+		</nunit2>
 	</target>
 </project>

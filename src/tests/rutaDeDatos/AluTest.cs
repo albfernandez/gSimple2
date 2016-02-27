@@ -13,13 +13,12 @@ namespace rutaDeDatos
 			//public short Operar(int operacion, int operacionSH, short operandoA, short operandoB);
 			ALU alu = new ALU();
 			
-			Assertion.AssertEquals("ALU-SUMA01", 0, alu.Operar (0,0, 0,0));
-			Assertion.AssertEquals("ALU-SUMA02", 0, alu.LeerResultado());
-			Assertion.AssertEquals("ALU-SUMA03", 0, alu.LeerC());
-			Assertion.AssertEquals("ALU-SUMA02", 0, alu.LeerN());
-			Assertion.AssertEquals("ALU-SUMA02", 1, alu.LeerZ());
+			Assert.AreEqual(0, alu.Operar (0,0, 0,0));
+			Assert.AreEqual(0, alu.LeerResultado());
+			Assert.AreEqual(0, alu.LeerC());
+			Assert.AreEqual(0, alu.LeerN());
+			Assert.AreEqual(1, alu.LeerZ());
 			
-			//Assertion.AssertEquals ("SUMA02",  
 			
 			
 		}
@@ -28,10 +27,10 @@ namespace rutaDeDatos
 		{
 			ALU alu = new ALU();
 			
-			Assertion.AssertEquals ("ALU-AND01", 0, alu.Operar(1,0,100,0));
-			Assertion.AssertEquals ("ALU-AND02", 0, alu.LeerC());
-			Assertion.AssertEquals ("ALU-AND03", 0, alu.LeerN());
-			Assertion.AssertEquals ("ALU-AND04", 1, alu.LeerZ());
+			Assert.AreEqual (0, alu.Operar(1,0,100,0));
+			Assert.AreEqual (0, alu.LeerC());
+			Assert.AreEqual (0, alu.LeerN());
+			Assert.AreEqual (1, alu.LeerZ());
 			
 		}
 		[Test]
@@ -39,15 +38,15 @@ namespace rutaDeDatos
 		{
 			ALU alu = new ALU();
 			
-			Assertion.AssertEquals ("ALU-TR01", 0, alu.Operar(2,0,0,0));
-			Assertion.AssertEquals ("ALU-TR02", 0, alu.LeerC());
-			Assertion.AssertEquals ("ALU-TR03", 0, alu.LeerN());
-			Assertion.AssertEquals ("ALU-TR04", 1, alu.LeerZ());
+			Assert.AreEqual (0, alu.Operar(2,0,0,0));
+			Assert.AreEqual (0, alu.LeerC());
+			Assert.AreEqual (0, alu.LeerN());
+			Assert.AreEqual (1, alu.LeerZ());
 			
-			Assertion.AssertEquals ("ALU-TR05", -1, alu.Operar (2,0,-1,1));
-			Assertion.AssertEquals ("ALU-TR06", 0, alu.LeerC());
-			Assertion.AssertEquals ("ALU-TR07", 1, alu.LeerN());
-			Assertion.AssertEquals ("ALU-TR08", 0, alu.LeerZ());
+			Assert.AreEqual (-1, alu.Operar (2,0,-1,1));
+			Assert.AreEqual (0, alu.LeerC());
+			Assert.AreEqual (1, alu.LeerN());
+			Assert.AreEqual (0, alu.LeerZ());
 			
 		}
 		
@@ -56,10 +55,10 @@ namespace rutaDeDatos
 		{
 			ALU alu = new ALU();
 			
-			Assertion.AssertEquals ("ALU-COM01", unchecked((short)0xFFFF), alu.Operar(3,0,0,0));
-			Assertion.AssertEquals ("ALU-COM02", 0, alu.LeerC());
-			Assertion.AssertEquals ("ALU-COM03", 1, alu.LeerN());
-			Assertion.AssertEquals ("ALU-COM04", 0, alu.LeerZ());
+			Assert.AreEqual (unchecked((short)0xFFFF), alu.Operar(3,0,0,0));
+			Assert.AreEqual (0, alu.LeerC());
+			Assert.AreEqual (1, alu.LeerN());
+			Assert.AreEqual (0, alu.LeerZ());
 
 		}
 		
@@ -68,10 +67,10 @@ namespace rutaDeDatos
 		{
 			ALU alu = new ALU();
 			
-			Assertion.AssertEquals ("ALU-OR01", (short)0x00FF, alu.Operar(4,0,0,0xFF));
-			Assertion.AssertEquals ("ALU-OR02", 0, alu.LeerC());
-			Assertion.AssertEquals ("ALU-OR03", 0, alu.LeerN());
-			Assertion.AssertEquals ("ALU-OR04", 0, alu.LeerZ());
+			Assert.AreEqual ((short)0x00FF, alu.Operar(4,0,0,0xFF));
+			Assert.AreEqual (0, alu.LeerC());
+			Assert.AreEqual (0, alu.LeerN());
+			Assert.AreEqual (0, alu.LeerZ());
 			
 		}
 		[Test]
@@ -79,34 +78,34 @@ namespace rutaDeDatos
 		{
 			ALU alu = new ALU();
 			
-			Assertion.AssertEquals("ALU-XOR01", (short) 0xF0, alu.Operar (5,0,unchecked((short)0xFF0F), unchecked((short)0xFFFF)));
-			Assertion.AssertEquals("ALU-XOR02", 0, alu.LeerC());
-			Assertion.AssertEquals("ALU-XOR03", 0, alu.LeerN());
-			Assertion.AssertEquals("ALU-XOR04", 0, alu.LeerZ());
+			Assert.AreEqual((short) 0xF0, alu.Operar (5,0,unchecked((short)0xFF0F), unchecked((short)0xFFFF)));
+			Assert.AreEqual(0, alu.LeerC());
+			Assert.AreEqual(0, alu.LeerN());
+			Assert.AreEqual(0, alu.LeerZ());
 		}
 		[Test]
 		public void TestSH()
 		{
 			ALU alu = new ALU();
 			
-			Assertion.AssertEquals ("ALU-SH01", 0x007F, alu.Operar (2, 1, 0x00FF, 0x0));
-			Assertion.AssertEquals ("ALU-SH02", 0, alu.LeerC());
-			Assertion.AssertEquals ("ALU-SH03", 0, alu.LeerN());
-			Assertion.AssertEquals ("ALU-SH04", 0, alu.LeerZ());
-			Assertion.AssertEquals ("ALU-SH05", 0x01FE, alu.Operar(2,2,0x00FF, 0x0));
-			Assertion.AssertEquals ("ALU-SH06", 0, alu.LeerC());
-			Assertion.AssertEquals ("ALU-SH07", 0, alu.LeerN());
-			Assertion.AssertEquals ("ALU-SH08", 0, alu.LeerZ());			
+			Assert.AreEqual (0x007F, alu.Operar (2, 1, 0x00FF, 0x0));
+			Assert.AreEqual (0, alu.LeerC());
+			Assert.AreEqual (0, alu.LeerN());
+			Assert.AreEqual (0, alu.LeerZ());
+			Assert.AreEqual (0x01FE, alu.Operar(2,2,0x00FF, 0x0));
+			Assert.AreEqual (0, alu.LeerC());
+			Assert.AreEqual (0, alu.LeerN());
+			Assert.AreEqual (0, alu.LeerZ());			
 		}		
 		[Test]
 		public void TestAcarreo()
 		{
 			ALU alu = new ALU();
 			
-			Assertion.AssertEquals ("ALU-AC01", unchecked((short) 0x8000), alu.Operar (0,0, 0x7FFF, 0x1));
-			Assertion.AssertEquals ("ALU-AC02", 1, alu.LeerC());
-			Assertion.AssertEquals ("ALU-AC03", 0, alu.LeerZ());
-			Assertion.AssertEquals ("ALU-AC04", 1, alu.LeerN());
+			Assert.AreEqual (unchecked((short) 0x8000), alu.Operar (0,0, 0x7FFF, 0x1));
+			Assert.AreEqual (1, alu.LeerC());
+			Assert.AreEqual (0, alu.LeerZ());
+			Assert.AreEqual (1, alu.LeerN());
 		
 		}
 	}

@@ -11,21 +11,21 @@ namespace utilidades
 		public void Test()
 		{
 			String textoInicial = "Hola mundo";
-			String leido= null;
-			Fichero.GuardarTexto("fichero", textoInicial);
-			leido = Fichero.CargarTexto ("fichero");
-			
-			Assertion.AssertEquals (textoInicial, leido);
+			String fichero = System.IO.Path.GetTempPath() +"/fichero.gSimple2." + System.Guid.NewGuid() + ".test";
+			Fichero.GuardarTexto(fichero, textoInicial);
+			String leido = Fichero.CargarTexto (fichero);
+			Assert.AreEqual (textoInicial, leido);
+			System.IO.File.Delete(fichero);
 		}
 		[Test]
 		public void TestAcentos()
 		{
 			String textoInicial = "Hola mundo\n Con acéntós y ñs y cosas }[][çÇ*==)(=";
-			String leido= null;
-			Fichero.GuardarTexto("fichero", textoInicial);
-			leido = Fichero.CargarTexto ("fichero");
-			
-			Assertion.AssertEquals (textoInicial, leido);
+			String fichero = System.IO.Path.GetTempPath() +"/fichero.gSimple2." + System.Guid.NewGuid() + ".test";
+			Fichero.GuardarTexto(fichero, textoInicial);
+			String leido = Fichero.CargarTexto (fichero);			
+			Assert.AreEqual (textoInicial, leido);
+			System.IO.File.Delete(fichero);
 		}
 		
 	}
