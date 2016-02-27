@@ -39,9 +39,10 @@
 		{
 			int acumulado = 0;
 			int paso = 50;
+			Hilo.Sleep (paso);
 			try
 			{
-				mic.EjecutarSubciclo();
+				EjecutarSubcicloGtk();
 				while (!terminar)
 				{
 				
@@ -52,24 +53,43 @@
 						if (acumulado >= tSubciclo)
 						{
 							acumulado=0;							
-    						Gtk.Application.Invoke(delegate {
-								try {
-									mic.EjecutarSubciclo();
-								}
-								catch (SimulacionFinalizadaException) {
-									terminar = true;
-								}
-							});
+    						EjecutarSubcicloGtk();
 						}
 					}
 				}
-				Gtk.Application.Invoke(delegate { mic.Detener(); });
+				DetenerGtk();
 			}
 			catch (System.Threading.ThreadAbortException)
 			{
-				Gtk.Application.Invoke(delegate {mic.Detener(); });
+				DetenerGtk();
 				return;
 			}
+		}
+		private void DetenerGtk() 
+		{
+			Gtk.Application.Invoke(delegate {
+				try 
+				{
+					mic.Detener();
+				}
+				catch (System.Exception)
+				{
+				}
+			 });
+		}
+
+		private void EjecutarSubcicloGtk() 
+		{
+			
+			Gtk.Application.Invoke(delegate {
+				try {
+					mic.EjecutarSubciclo();
+				}
+				catch (SimulacionFinalizadaException) {
+					terminar = true;
+				}
+			});
+			
 		}
 		
 		/// <summary>Detiene la ejecución del hilo.</summary>

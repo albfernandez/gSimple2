@@ -1093,7 +1093,7 @@ namespace simple2.interfaz.gtk
 				}
 				catch (Exception)
 				{
-					Hilo.Sleep(50);
+					//Hilo.Sleep(50);
 				}
 			}
 			
@@ -1106,7 +1106,7 @@ namespace simple2.interfaz.gtk
 			mic.AddRegisterChangeListener(repRDD);
 			
 			notebook.Page = 2;
-			Hilo.Sleep (100);
+			//Hilo.Sleep (100);
 			PonerMensajeStatusbar (GetText("Ventana_Simulacion_Curso"));
 			
 			hiloEjecucion = new HiloEjecucion(mic);
